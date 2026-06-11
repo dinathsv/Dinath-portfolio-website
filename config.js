@@ -61,6 +61,20 @@ export const config = {
     ],
     experiences: [
         {
+            position: "Full Stack Developer",
+            company: "Inncome Developers",
+            period: "Dec 2025 - Present",
+            location: "Sri Lanka (Remote)",
+            description: "Developed end-to-end web and software solutions, managing the complete development lifecycle. Contributed to digital transformation initiatives through scalable web applications.",
+            responsibilities: [
+                "Developed end-to-end web and software solutions, managing the complete development lifecycle.",
+                "Translated client requirements into intuitive UI/UX designs, enhancing user engagement.",
+                "Architected robust back-end systems and managed cloud deployments, ensuring high performance.",
+                "Contributed to digital transformation initiatives through scalable web applications at Inncome Developers."
+            ],
+            technologies: ["Full Stack Development", "UI/UX Design", "Backend Systems", "Cloud Deployment", "Web Applications"]
+        },
+        {
             position: "Banking Trainee",
             company: "People's Bank",
             period: "Feb 2024 - Jun 2024",

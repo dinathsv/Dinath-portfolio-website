@@ -64,96 +64,97 @@ const Education = () => {
                         </motion.div>
                     </div>
 
-                    <div className="max-w-4xl mx-auto">
+                    <div className="max-w-5xl mx-auto relative">
+                        <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 bg-gradient-to-b from-white/20 via-white/10 to-transparent -translate-x-1/2" />
+                        
+                        <div className="md:hidden absolute left-[23px] top-8 bottom-8 w-0.5 bg-gradient-to-b from-white/20 via-white/10 to-transparent" />
+
                         <motion.div
                             variants={containerAnimation}
-                            className="space-y-8"
+                            className="space-y-12"
                         >
-                            {education.map((edu, index) => (
+                            {education.map((edu, index) => {
+                                const isLeft = index % 2 === 0;
+                                return (
                                 <motion.div
                                     key={index}
                                     variants={itemAnimation}
-                                    className="relative"
+                                    className={`relative flex flex-col md:flex-row justify-between items-start w-full group ${!isLeft ? 'md:flex-row-reverse' : ''}`}
                                 >
-                                    <div className="flex gap-6">
-                                        <div className="flex flex-col items-center">
-                                            <div className="w-12 h-12 rounded-xl bg-black border border-white/30 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:border-white/60 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]">
-                                                <HiAcademicCap className="w-6 h-6 text-white" />
+                                    <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-xl bg-black border border-white/30 flex items-center justify-center shadow-lg z-10 transition-all duration-300 group-hover:border-white/60 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] group-hover:scale-110">
+                                        <HiAcademicCap className="w-6 h-6 text-white" />
+                                    </div>
+
+                                    <div className={`w-full md:w-[45%] pl-16 md:pl-0 ${isLeft ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}>
+                                        <div className="bg-black border border-white/30 rounded-2xl p-6 backdrop-blur-md shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_10px_rgba(255,255,255,0.05)] hover:border-white/60 transition-all duration-300 relative overflow-hidden group-hover:shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_20px_rgba(255,255,255,0.1)]">
+                                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shiny-sweep" />
                                             </div>
-                                            {index !== education.length - 1 && (
-                                                <div className="w-0.5 h-full bg-gradient-to-b from-white/20 to-transparent mt-4" />
-                                            )}
-                                        </div>
-
-                                        <div className="flex-1 pb-8">
-                                            <div className="bg-black border border-white/30 rounded-2xl p-6 backdrop-blur-md shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_10px_rgba(255,255,255,0.05)] hover:border-white/60 transition-all duration-300 group relative overflow-hidden hover:shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_20px_rgba(255,255,255,0.1)]">
-                                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shiny-sweep" />
-                                                </div>
-                                                
-                                                <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
-                                                    <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-2xl" />
-                                                </div>
-                                                
-                                                <div className="relative z-10">
-                                                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-                                                        <div className="flex-1">
-                                                            <h3 className="text-xl font-bold text-white mb-1">
-                                                                {edu.degree}
-                                                            </h3>
-                                                            <p className="text-primary/80 font-medium">
-                                                                {edu.institution}
-                                                            </p>
-                                                        </div>
-                                                        <div className="flex flex-wrap items-center gap-2 text-sm">
-                                                            <div className="flex items-center gap-2 text-white/70">
-                                                                <HiCalendar className="w-4 h-4" />
-                                                                <span>{edu.period}</span>
-                                                            </div>
-                                                            <span className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
-                                                                edu.status === 'Pursuing'
-                                                                    ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                                                                    : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                                                            }`}>
-                                                                {edu.status}
-                                                            </span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-white/60 mb-4">
-                                                        <span>📚 {edu.field}</span>
-                                                        {edu.grade && (
-                                                            <>
-                                                                <span className="hidden sm:block">•</span>
-                                                                <span className="text-amber-400">Grade: {edu.grade}</span>
-                                                            </>
-                                                        )}
-                                                    </div>
-
-                                                    {edu.description && (
-                                                        <p className="text-sm text-white/70 leading-relaxed mb-4">
-                                                            {edu.description}
+                                            
+                                            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
+                                                <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-2xl" />
+                                            </div>
+                                            
+                                            <div className="relative z-10">
+                                                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+                                                    <div className="flex-1">
+                                                        <h3 className="text-xl font-bold text-white mb-1">
+                                                            {edu.degree}
+                                                        </h3>
+                                                        <p className="text-primary/80 font-medium">
+                                                            {edu.institution}
                                                         </p>
-                                                    )}
-
-                                                    {edu.activities && edu.activities.length > 0 && (
-                                                        <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-                                                            {edu.activities.map((activity, idx) => (
-                                                                <span
-                                                                    key={idx}
-                                                                    className="text-xs bg-white/10 text-white px-3 py-1 rounded-full border border-white/20"
-                                                                >
-                                                                    {activity}
-                                                                </span>
-                                                            ))}
+                                                    </div>
+                                                    <div className="flex flex-wrap items-center gap-2 text-sm">
+                                                        <div className="flex items-center gap-2 text-white/70">
+                                                            <HiCalendar className="w-4 h-4" />
+                                                            <span>{edu.period}</span>
                                                         </div>
+                                                        <span className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
+                                                            edu.status === 'Pursuing'
+                                                                ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                                                                : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                                                        }`}>
+                                                            {edu.status}
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-white/60 mb-4">
+                                                    <span>📚 {edu.field}</span>
+                                                    {edu.grade && (
+                                                        <>
+                                                            <span className="hidden sm:block">•</span>
+                                                            <span className="text-amber-400">Grade: {edu.grade}</span>
+                                                        </>
                                                     )}
                                                 </div>
+
+                                                {edu.description && (
+                                                    <p className="text-sm text-white/70 leading-relaxed mb-4">
+                                                        {edu.description}
+                                                    </p>
+                                                )}
+
+                                                {edu.activities && edu.activities.length > 0 && (
+                                                    <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                                                        {edu.activities.map((activity, idx) => (
+                                                            <span
+                                                                key={idx}
+                                                                className="text-xs bg-white/10 text-white px-3 py-1 rounded-full border border-white/20"
+                                                            >
+                                                                {activity}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="hidden md:block md:w-[45%]" />
                                 </motion.div>
-                            ))}
+                                );
+                            })}
                         </motion.div>
                     </div>
                 </motion.div>
