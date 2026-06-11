@@ -76,7 +76,6 @@ const ExperienceSection = () => {
                                     className="relative"
                                 >
                                     <div className="flex gap-6">
-                                        {/* Timeline line */}
                                         <div className="flex flex-col items-center">
                                             <div className="w-12 h-12 rounded-xl bg-black border border-white/30 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:border-white/60 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]">
                                                 <HiBriefcase className="w-6 h-6 text-white" />
@@ -86,15 +85,12 @@ const ExperienceSection = () => {
                                             )}
                                         </div>
 
-                                        {/* Content */}
                                         <div className="flex-1 pb-8">
                                             <div className="bg-black border border-white/30 rounded-2xl p-6 backdrop-blur-md shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_10px_rgba(255,255,255,0.05)] hover:border-white/60 transition-all duration-300 group relative overflow-hidden hover:shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_20px_rgba(255,255,255,0.1)]">
-                                                {/* Shiny overlay effect */}
                                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shiny-sweep" />
                                                 </div>
                                                 
-                                                {/* Glossy shine effect */}
                                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
                                                     <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-2xl" />
                                                 </div>

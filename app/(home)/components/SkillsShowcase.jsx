@@ -100,18 +100,15 @@ const SkillsShowcase = () => {
                             "
                             style={{ height: '100%' }}
                         >
-                            {/* Shiny overlay effect */}
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shiny-sweep" />
                             </div>
                             
-                            {/* Glossy shine effect */}
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
                                 <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-2xl" />
                             </div>
                             
                             <div className="relative flex flex-col items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 w-full z-10">
-                                {/* Icon container */}
                                 <div className="relative">
                                     <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-md sm:rounded-lg md:rounded-xl bg-black border border-white/30 flex items-center justify-center shadow-lg transition-all duration-300 group-hover:border-white/60 group-hover:shadow-white/20 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]">
                                         <div className="text-white drop-shadow-lg transition-transform duration-300 group-hover:scale-110">
@@ -120,7 +117,6 @@ const SkillsShowcase = () => {
                                     </div>
                                 </div>
                                 
-                                {/* Skill name */}
                                 <div className="flex flex-col items-center gap-0.5 sm:gap-1 w-full px-0.5 sm:px-1">
                                     <span className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-bold text-white text-center tracking-tight transition-all duration-300 group-hover:text-white/90 break-words leading-tight">
                                         {skill.name}

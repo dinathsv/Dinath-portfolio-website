@@ -47,7 +47,6 @@ const textAnimation = {
 const HeroSection = () => {
   return (
     <section className="min-h-[calc(100vh-140px)] flex items-center justify-center relative bg-[#0B0B0C] overflow-hidden font-sans">
-      {/* Subtle Dot Mesh Pattern */}
       <div 
         className="absolute inset-0 z-0 opacity-[0.15]" 
         style={{ 
@@ -63,7 +62,6 @@ const HeroSection = () => {
             animate="show"
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center justify-between w-full max-w-7xl mx-auto relative"
           >
-            {/* Text Content */}
             <div className="lg:col-span-7 flex flex-col items-center md:items-start text-center md:text-left space-y-6 w-full max-w-2xl mx-auto lg:mx-0">
               <motion.div
                 variants={itemAnimation}
@@ -117,21 +115,16 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Profile Image Container */}
         <motion.div
           variants={itemAnimation}
           className="lg:col-span-5 w-full flex justify-center lg:justify-end relative"
         >
-          {/* Subtle Ambient Glow behind the whole card */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-white/[0.02] blur-[80px] rounded-full pointer-events-none" />
 
-          {/* Transparent Container */}
           <div className="relative w-full max-w-[320px] lg:max-w-[400px] aspect-[4/5] flex items-end justify-center mx-auto lg:mx-0 z-10 group">
             
-            {/* Inner Ambient Glow */}
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-700/20 to-transparent blur-2xl z-0 pointer-events-none" />
             
-            {/* Base Image */}
             <div className="relative w-full h-full z-10">
                <Image 
                  src="/Dinath.png" 
@@ -141,7 +134,6 @@ const HeroSection = () => {
                  priority
                />
                
-               {/* Soft fade mask at the bottom to blend with the card */}
                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0B0B0C] to-transparent pointer-events-none" />
             </div>
           </div>

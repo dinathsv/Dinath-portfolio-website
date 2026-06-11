@@ -18,7 +18,6 @@ const Home = () => {
 
       <SkillsSection />
       
-      {/* Contact Button Section */}
       <section className="py-16 pb-24">
         <div className="container mx-auto px-6">
           <motion.div

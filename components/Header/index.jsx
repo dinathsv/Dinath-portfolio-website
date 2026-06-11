@@ -75,7 +75,6 @@ const Logo = ({ isMobile = false }) => (
                 transition={{ delay: 0.2 }}
             >
                 <span className="hidden sm:inline">{config.developer.name}</span>
-                {/* <span className="sm:hidden">{config.developer.name}</span> */}
             </motion.span>
         </Link>
     </motion.div>
@@ -145,7 +144,6 @@ const Header = () => {
                         <ContactButton />
                     </div>
                     
-                    {/* Mobile Menu Button */}
                     <button
                         onClick={toggleMobileMenu}
                         className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
@@ -160,11 +158,9 @@ const Header = () => {
                 </div>
             </motion.header>
 
-            {/* Mobile Menu */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <>
-                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -174,7 +170,6 @@ const Header = () => {
                             onClick={closeMobileMenu}
                         />
                         
-                        {/* Mobile Menu Panel */}
                         <motion.div
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
@@ -183,17 +178,14 @@ const Header = () => {
                             className="fixed top-0 right-0 h-full w-64 bg-black/95 backdrop-blur-md border-l border-white/10 z-50 md:hidden overflow-y-auto"
                         >
                             <div className="flex flex-col h-full p-6">
-                                {/* Mobile Logo */}
                                 <div className="mb-8">
                                     <Logo isMobile={true} />
                                 </div>
 
-                                {/* Mobile Navigation */}
                                 <div className="flex-1">
                                     <Navigation isMobile={true} onLinkClick={closeMobileMenu} />
                                 </div>
 
-                                {/* Mobile Contact Button */}
                                 <ContactButton isMobile={true} onLinkClick={closeMobileMenu} />
                             </div>
                         </motion.div>

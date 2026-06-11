@@ -32,7 +32,6 @@ const ContactForm = ({ onSubmit }) => {
   return (
     <form ref={formRef} onSubmit={handleSubmit(onSubmitHandler)} className="space-y-6">
       <div className="space-y-4">
-        {/* Name and Email in a 2-column grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium text-muted-foreground block">
@@ -79,7 +78,6 @@ const ContactForm = ({ onSubmit }) => {
           </div>
         </div>
 
-        {/* Message field - full width */}
         <div className="space-y-2">
           <label htmlFor="message" className="text-sm font-medium text-muted-foreground block">
             Message
