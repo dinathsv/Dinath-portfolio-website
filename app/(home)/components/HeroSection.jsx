@@ -61,10 +61,10 @@ const HeroSection = () => {
             variants={containerAnimation}
             initial="hidden"
             animate="show"
-            className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-20 relative"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center justify-between w-full max-w-7xl mx-auto relative"
           >
             {/* Text Content */}
-            <div className="flex-1 text-center md:text-left space-y-5 max-w-2xl">
+            <div className="lg:col-span-7 flex flex-col items-center md:items-start text-center md:text-left space-y-6 w-full max-w-2xl mx-auto lg:mx-0">
               <motion.div
                 variants={itemAnimation}
                 className="inline-flex items-center px-3 py-1.5 rounded-full border border-zinc-800 bg-zinc-900 shadow-sm"
@@ -75,7 +75,7 @@ const HeroSection = () => {
               <div className="space-y-4">
                 <motion.h1
                   variants={itemAnimation}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]"
+                  className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-white leading-tight whitespace-normal lg:whitespace-nowrap"
                 >
                   Hi, I'm {config.developer.name}
                 </motion.h1>
@@ -120,19 +120,30 @@ const HeroSection = () => {
         {/* Profile Image Container */}
         <motion.div
           variants={itemAnimation}
-          className="flex-1 flex justify-center md:justify-end w-full relative"
+          className="lg:col-span-5 w-full flex justify-center lg:justify-end relative"
         >
-          {/* Subtle Ambient Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-white/[0.03] blur-[80px] rounded-full pointer-events-none" />
+          {/* Subtle Ambient Glow behind the whole card */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-white/[0.02] blur-[80px] rounded-full pointer-events-none" />
 
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl mx-auto md:mx-0 z-10 bg-[#121214]">
-            <Image 
-              src="/Dinath.jpg" 
-              alt={config.developer.name}
-              fill
-              className="object-cover"
-              priority
-            />
+          {/* Card Container */}
+          <div className="relative w-full max-w-[320px] lg:max-w-[400px] aspect-[4/5] bg-zinc-900/40 border border-zinc-800/80 rounded-3xl backdrop-blur-md overflow-hidden flex items-end justify-center shadow-2xl mx-auto lg:mx-0 z-10 group">
+            
+            {/* Inner Ambient Glow */}
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-700/20 to-transparent blur-xl z-0 pointer-events-none" />
+            
+            {/* Base Image */}
+            <div className="relative w-full h-full z-10">
+               <Image 
+                 src="/Dinath.jpg" 
+                 alt={config.developer.name}
+                 fill
+                 className="object-cover object-top mix-blend-luminosity opacity-90 transition-all duration-500 group-hover:mix-blend-normal group-hover:opacity-100"
+                 priority
+               />
+               
+               {/* Soft fade mask at the bottom to blend with the card */}
+               <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0B0B0C] to-transparent pointer-events-none" />
+            </div>
           </div>
         </motion.div>
         </motion.div>
