@@ -54,7 +54,7 @@ export const config = {
                 { name: "IntelliJ IDEA", level: "Advanced" },
                 { name: "PyCharm", level: "Intermediate" },
                 { name: "Git", level: "Advanced" },
-                { name: "TensorFlow", level: "Intermediate" },
+                { name: "React", level: "Intermediate" },
                 { name: "PyTorch", level: "Intermediate" }
             ]
         }

@@ -14,7 +14,7 @@ My personal portfolio showcasing the data science, machine learning, and full-st
 - **Frontend**: JavaScript, React, HTML/CSS, Tailwind CSS
 - **Backend**: Python (Django), PHP, Node.js, Java
 - **Database**: MariaDB, MySQL, SQLite
-- **Data & ML**: Python, TensorFlow, PyTorch, Pandas, NumPy
+- **Data & ML**: Python, React, PyTorch, Pandas, NumPy
 - **Mobile**: Kotlin, Jetpack Compose, Android
 - **Tools**: VS Code, IntelliJ IDEA, PyCharm, Git, Linux (Fedora/Arch)
 

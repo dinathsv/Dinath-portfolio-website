@@ -119,7 +119,7 @@ const HeroSection = () => {
           variants={itemAnimation}
           className="lg:col-span-5 w-full flex justify-center lg:justify-end relative"
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-white/[0.02] blur-[80px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] pointer-events-none" />
 
           <div className="relative w-full max-w-[320px] lg:max-w-[400px] aspect-[4/5] flex items-end justify-center mx-auto lg:mx-0 z-10 group">
             
