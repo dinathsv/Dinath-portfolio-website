@@ -64,35 +64,34 @@ const HeroSection = () => {
             className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-20 relative"
           >
             {/* Text Content */}
-            <div className="flex-1 text-center md:text-left space-y-6">
+            <div className="flex-1 text-center md:text-left space-y-5 max-w-2xl">
               <motion.div
                 variants={itemAnimation}
-                className="inline-flex items-center px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm"
+                className="inline-flex items-center px-3 py-1.5 rounded-full border border-zinc-800 bg-zinc-900 shadow-sm"
               >
                 <span className="text-xs font-medium tracking-wide text-zinc-400">&lt;/&gt; Welcome to my portfolio</span>
               </motion.div>
 
-          <div className="space-y-3">
-            <motion.h1
-              variants={itemAnimation}
-              className="text-4xl md:text-6xl lg:text-[4.5rem] font-bold tracking-tight text-white leading-tight"
-            >
-              Hi, I'm {config.developer.name}
-            </motion.h1>
-            <motion.h2
-              variants={itemAnimation}
-              className="text-xl md:text-2xl lg:text-3xl font-medium text-zinc-400/90 tracking-wide"
-            >
-              Aspiring Data Scientist
-            </motion.h2>
-          </div>
+              <div className="space-y-4">
+                <motion.h1
+                  variants={itemAnimation}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]"
+                >
+                  Hi, I'm {config.developer.name}
+                </motion.h1>
+                <motion.div variants={itemAnimation} className="pt-1">
+                  <h2 className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-medium tracking-wide text-sm sm:text-base">
+                    Aspiring Data Scientist
+                  </h2>
+                </motion.div>
+              </div>
 
-          <motion.p
-            variants={itemAnimation}
-            className="text-base sm:text-lg text-[#A1A1AA] leading-[1.6] max-w-2xl mx-auto md:mx-0"
-          >
-           Passionate about transforming data into actionable insights. Specializing in machine learning, statistical analysis, and data visualization. Building intelligent solutions that drive decision-making.
-          </motion.p>
+              <motion.p
+                variants={itemAnimation}
+                className="text-base sm:text-lg text-[#a1a1aa] leading-relaxed mx-auto md:mx-0"
+              >
+               Passionate about transforming data into actionable insights. Specializing in <span className="font-semibold text-zinc-200">machine learning</span>, <span className="font-semibold text-zinc-200">statistical analysis</span>, and <span className="font-semibold text-zinc-200">data visualization</span>. Building intelligent solutions that drive decision-making.
+              </motion.p>
 
           <motion.div
             variants={itemAnimation}
