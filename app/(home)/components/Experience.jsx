@@ -93,7 +93,7 @@ const ExperienceSection = () => {
                                         <HiBriefcase className="w-4 h-4 text-zinc-400 group-hover:text-blue-400 transition-colors" />
                                     </div>
 
-                                    <div className={`w-full md:w-[47%] pl-16 md:pl-0 ${isLeft ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}>
+                                    <div className={`w-full md:w-[49%] pl-16 md:pl-0 md:mt-8 ${isLeft ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}>
                                         <div className="bg-zinc-950/20 backdrop-blur-none border border-transparent rounded-[2.5rem] p-8 md:p-10 hover:bg-zinc-900/20 transition-all duration-300 relative overflow-hidden group-hover:border-zinc-800/50 z-10">
                                             
                                             <div className="relative z-10">
@@ -150,7 +150,7 @@ const ExperienceSection = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="hidden md:block md:w-[47%]" />
+                                    <div className="hidden md:block md:w-[49%]" />
                                 </motion.div>
                                 );
                             })}
