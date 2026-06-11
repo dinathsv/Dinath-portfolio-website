@@ -123,18 +123,20 @@ const HeroSection = () => {
 
           <div className="relative w-full max-w-[320px] lg:max-w-[400px] aspect-[4/5] flex items-end justify-center mx-auto lg:mx-0 z-10 group">
             
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-700/20 to-transparent blur-2xl z-0 pointer-events-none" />
-            
-            <div className="relative w-full h-full z-10">
+            <div 
+              className="relative w-full h-full z-10"
+              style={{
+                maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
+              }}
+            >
                <Image 
                  src="/Dinath.png" 
                  alt={config.developer.name}
                  fill
-                 className="object-cover object-top opacity-95 transition-all duration-500 group-hover:opacity-100"
+                 className="object-cover object-top opacity-95 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105"
                  priority
                />
-               
-               <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0B0B0C] to-transparent pointer-events-none" />
             </div>
           </div>
         </motion.div>
