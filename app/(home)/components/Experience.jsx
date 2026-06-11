@@ -64,10 +64,10 @@ const ExperienceSection = () => {
                         </motion.div>
                     </div>
 
-                    <div className="max-w-5xl mx-auto relative">
-                        <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 bg-gradient-to-b from-white/20 via-white/10 to-transparent -translate-x-1/2" />
+                    <div className="max-w-7xl mx-auto relative px-4 md:px-8">
+                        <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-[1.5px] bg-gradient-to-b from-blue-500/40 via-blue-400/20 to-transparent -translate-x-1/2 shadow-[0_0_8px_rgba(59,130,246,0.4)]" />
                         
-                        <div className="md:hidden absolute left-[23px] top-8 bottom-8 w-0.5 bg-gradient-to-b from-white/20 via-white/10 to-transparent" />
+                        <div className="md:hidden absolute left-[31px] top-8 bottom-8 w-[1.5px] bg-gradient-to-b from-blue-500/40 via-blue-400/20 to-transparent shadow-[0_0_8px_rgba(59,130,246,0.4)]" />
 
                         <motion.div
                             variants={containerAnimation}
@@ -81,19 +81,12 @@ const ExperienceSection = () => {
                                     variants={itemAnimation}
                                     className={`relative flex flex-col md:flex-row justify-between items-start w-full group ${!isLeft ? 'md:flex-row-reverse' : ''}`}
                                 >
-                                    <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 w-12 h-12 rounded-xl bg-black border border-white/30 flex items-center justify-center shadow-lg z-10 transition-all duration-300 group-hover:border-white/60 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] group-hover:scale-110">
-                                        <HiBriefcase className="w-6 h-6 text-white" />
+                                    <div className="absolute left-[15px] md:left-1/2 md:-translate-x-1/2 top-0 w-8 h-8 rounded-full bg-zinc-950/50 backdrop-blur-md border border-zinc-800 flex items-center justify-center shadow-[0_0_10px_rgba(0,0,0,0.5)] z-10 transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:scale-110">
+                                        <HiBriefcase className="w-4 h-4 text-zinc-400 group-hover:text-blue-400 transition-colors" />
                                     </div>
 
-                                    <div className={`w-full md:w-[45%] pl-16 md:pl-0 ${isLeft ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}>
-                                        <div className="bg-black border border-white/30 rounded-2xl p-6 backdrop-blur-md shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_10px_rgba(255,255,255,0.05)] hover:border-white/60 transition-all duration-300 relative overflow-hidden group-hover:shadow-[0_4px_6px_rgba(0,0,0,0.5),0_0_20px_rgba(255,255,255,0.1)]">
-                                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shiny-sweep" />
-                                            </div>
-                                            
-                                            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
-                                                <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-2xl" />
-                                            </div>
+                                    <div className={`w-full md:w-[47%] pl-16 md:pl-0 ${isLeft ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}>
+                                        <div className="bg-zinc-950/20 backdrop-blur-none border border-transparent rounded-2xl p-6 md:p-8 hover:bg-zinc-900/20 transition-all duration-300 relative overflow-hidden group-hover:border-zinc-800/50">
                                             
                                             <div className="relative z-10">
                                                 <div className="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-3 mb-4">
@@ -149,7 +142,7 @@ const ExperienceSection = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="hidden md:block md:w-[45%]" />
+                                    <div className="hidden md:block md:w-[47%]" />
                                 </motion.div>
                                 );
                             })}
