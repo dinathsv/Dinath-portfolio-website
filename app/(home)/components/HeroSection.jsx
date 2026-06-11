@@ -134,10 +134,10 @@ const HeroSection = () => {
             {/* Base Image */}
             <div className="relative w-full h-full z-10">
                <Image 
-                 src="/Dinath.jpg" 
+                 src="/Dinath.png" 
                  alt={config.developer.name}
                  fill
-                 className="object-cover object-top mix-blend-luminosity opacity-90 transition-all duration-500 group-hover:mix-blend-normal group-hover:opacity-100"
+                 className="object-cover object-top opacity-95 transition-all duration-500 group-hover:opacity-100"
                  priority
                />
                
