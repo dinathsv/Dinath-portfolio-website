@@ -14,7 +14,50 @@ export const config = {
         { href: '/contact', label: 'Contact' }
     ],
     recentTracks: true, // Enable/disable Spotify recent tracks
-    projects: [],
+    projects: [
+        {
+            title: "Foreign Shop System",
+            description: "Designed and developed a Laravel-based product and order management system for a foreign food retail business. Features manual payment workflows, SMS notifications, and clean UI.",
+            image: "/projects/IVY_logo.jpeg",
+            technologies: ["Laravel", "Asynchronous Processing"],
+            demo: "https://ivy.lk"
+        },
+        {
+            title: "MAMcargo — Dual-Frontend Logistics",
+            description: "Developed a high-performance logistics and e-commerce ecosystem using Laravel 12 and Vite. The platform features a dual-frontend architecture managing MAMcargo and ClickLanka.",
+            image: "/projects/MAMcrago_logo.jpeg",
+            technologies: ["PHP 8.2", "Laravel 12", "Blade", "Vite", "MySQL", "PHPUnit", "Asynchronous Processing"],
+            demo: "https://mamcargo.com/"
+        },
+        {
+            title: "VFIX – Service Booking Platform",
+            description: "Production-ready service booking and worker management platform. Implemented backend using Laravel with a role-based architecture and state-driven booking lifecycle.",
+            image: "/projects/VFIX_logo.jpeg",
+            technologies: ["Laravel", "MariaDB / MySQL", "Database Design & Integration"],
+            demo: "https://vfix.lk/"
+        },
+        {
+            title: "Complaint BOX – Digital Complaint Management System",
+            description: "Web-based system supporting Complainers, Handlers, and Administrators. Focused on clean interface, secure authentication, and smooth navigation.",
+            image: "/logo.jpg",
+            technologies: ["PHP", "HTML", "CSS", "JavaScript", "MariaDB", "Role-Based Access Control (RBAC)"],
+            github: "https://github.com/Dinath2002/complaint-box-system.git"
+        },
+        {
+            title: "Student Event Management System",
+            description: "Dynamic web application to simplify university event coordination and registration. Features strong database integration and a modern dark-themed interface.",
+            image: "/logo.jpg",
+            technologies: ["HTML", "CSS", "JavaScript", "PHP", "MariaDB", "UI/UX Design", "Full Stack Web Development"],
+            github: "https://github.com/Dinath2002/student-event-management.git"
+        },
+        {
+            title: "Online Auction & E-Commerce Shopping System",
+            description: "Dynamic web application combining auction bidding and e-commerce functionality. Enables users to list products, place bids, and complete secure transactions.",
+            image: "/logo.jpg",
+            technologies: ["Python (Django)", "SQLite", "MariaDB"],
+            github: "https://github.com/Dinath2002/auction_shop"
+        }
+    ],
     skills: [
         {
             title: "Frontend",
@@ -26,7 +69,9 @@ export const config = {
                 { name: "JavaScript", level: "Advanced", hot: true },
                 { name: "React", level: "Advanced" },
                 { name: "TailwindCSS", level: "Expert" },
-                { name: "HTML", level: "Intermediate" }
+                { name: "HTML", level: "Intermediate" },
+                { name: "UI/UX Design", level: "Advanced" },
+                { name: "Full Stack Web Development", level: "Advanced" }
             ]
         },
         {
@@ -37,10 +82,13 @@ export const config = {
             iconClass: "text-emerald-500",
             skills: [
                 { name: "Python (Django)", level: "Advanced", hot: true },
+                { name: "Laravel", level: "Advanced", hot: true },
                 { name: "Node.js", level: "Advanced" },
-                { name: "MariaDB", level: "Advanced" },
+                { name: "MariaDB / MySQL", level: "Advanced" },
                 { name: "Java", level: "Intermediate" },
-                { name: "PHP", level: "Intermediate" }
+                { name: "PHP", level: "Intermediate" },
+                { name: "Asynchronous Processing", level: "Intermediate" },
+                { name: "Role-Based Access Control (RBAC)", level: "Advanced" }
             ]
         },
         {

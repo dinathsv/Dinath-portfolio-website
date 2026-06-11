@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { itemAnimation } from './Animations';
 
 export const ProjectCard = ({ project, index }) => (
@@ -13,7 +13,7 @@ export const ProjectCard = ({ project, index }) => (
         <div className="sm:w-1/3">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                 <img
-                    src={project.image}
+                    src={project.image || "/logo.jpg"}
                     alt={project.title}
                     loading="lazy"
                     className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
@@ -50,21 +50,41 @@ export const ProjectCard = ({ project, index }) => (
             </div>
 
             <div className="flex items-center gap-3 pt-4">
-                <Button
-                    size="sm"
-                    className="rounded-full h-8 px-4 text-xs"
-                    asChild
-                >
-                    <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2"
+                {project.demo && (
+                    <Button
+                        size="sm"
+                        className="rounded-full h-8 px-4 text-xs"
+                        asChild
                     >
-                        Live Demo
-                        <FaExternalLinkAlt className="w-3 h-3" />
-                    </a>
-                </Button>
+                        <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2"
+                        >
+                            Live Demo
+                            <FaExternalLinkAlt className="w-3 h-3" />
+                        </a>
+                    </Button>
+                )}
+                {project.github && (
+                    <Button
+                        size="sm"
+                        variant="outline"
+                        className="rounded-full h-8 px-4 text-xs"
+                        asChild
+                    >
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2"
+                        >
+                            Source Code
+                            <FaGithub className="w-3 h-3" />
+                        </a>
+                    </Button>
+                )}
             </div>
         </div>
     </motion.div>
