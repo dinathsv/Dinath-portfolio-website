@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import HeroSection from './components/HeroSection'
-import GithubProjects from './components/GithubProjects'
+
 import SkillsSection from './components/Skills'
 import ExperienceSection from './components/Experience'
 import Education from './components/Education'
@@ -15,7 +15,7 @@ const Home = () => {
       <HeroSection />
       <ExperienceSection />
       <Education />
-      <GithubProjects />
+
       <SkillsSection />
       
       {/* Contact Button Section */}
