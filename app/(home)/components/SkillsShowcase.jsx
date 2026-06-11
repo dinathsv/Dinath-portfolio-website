@@ -4,8 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HiCode } from 'react-icons/hi';
 import { FaNodeJs, FaGithub, FaPython, FaJava } from 'react-icons/fa';
-import { SiMariadb, SiTailwindcss, SiPandas, SiNumpy, SiTensorflow, SiArchlinux, SiMaterialdesign } from 'react-icons/si';
-import { TbBrandFramerMotion } from 'react-icons/tb';
+import { SiMariadb, SiTailwindcss, SiPandas, SiNumpy, SiTensorflow, SiArchlinux, SiPostgresql, SiSpringboot } from 'react-icons/si';
 
 const skills = [
     { name: "TensorFlow", icon: <SiTensorflow className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1" },
@@ -16,10 +15,10 @@ const skills = [
     { name: "GitHub", icon: <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
     { name: "Tailwind", icon: <SiTailwindcss className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
     { name: "NumPy", icon: <SiNumpy className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "Framer Motion", icon: <TbBrandFramerMotion className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
+    { name: "PostgreSQL", icon: <SiPostgresql className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
     { name: "Java", icon: <FaJava className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1" },
     { name: "Pandas", icon: <SiPandas className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "Material UI", icon: <SiMaterialdesign className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
+    { name: "Spring Boot", icon: <SiSpringboot className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
 ];
 
 const containerAnimation = {

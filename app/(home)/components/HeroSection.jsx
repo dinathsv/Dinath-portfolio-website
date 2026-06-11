@@ -51,13 +51,15 @@ const HeroSection = () => {
       <BackgroundPresets.Minimal />
 
       <div className="container mx-auto px-6">
-        <motion.div
-          variants={containerAnimation}
-          initial="hidden"
-          animate="show"
-          className="max-w-3xl mx-auto text-center space-y-8 relative"
-        >
           <motion.div
+            variants={containerAnimation}
+            initial="hidden"
+            animate="show"
+            className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12 relative"
+          >
+            {/* Text Content */}
+            <div className="flex-1 text-center md:text-left space-y-8">
+              <motion.div
             variants={itemAnimation}
             className="inline-flex items-center space-x-2 bg-secondary/10 border-[1.8px] border-zinc-900/70 px-4 py-2 rounded-full text-primary backdrop-blur-sm"
           >
@@ -65,20 +67,7 @@ const HeroSection = () => {
             <span className="text-sm font-medium">Welcome to my portfolio</span>
           </motion.div>
 
-          <motion.div
-            variants={itemAnimation}
-            className="flex justify-center mt-6"
-          >
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-zinc-800 shadow-xl mx-auto">
-              <Image 
-                src="/Dinath.jpg" 
-                alt={config.developer.name}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </motion.div>
+
 
           <div className="space-y-4">
             <motion.h1
@@ -102,14 +91,14 @@ const HeroSection = () => {
 
           <motion.p
             variants={itemAnimation}
-            className="text-base sm:text-md text-muted-foreground leading-relaxed max-w-2xl mx-auto"
+            className="text-base sm:text-md text-muted-foreground leading-relaxed max-w-2xl mx-auto md:mx-0"
           >
            Passionate about transforming data into actionable insights. Specializing in machine learning, statistical analysis, and data visualization. Building intelligent solutions that drive decision-making.
           </motion.p>
 
           <motion.div
             variants={itemAnimation}
-            className="flex flex-wrap gap-4 justify-center pt-6"
+            className="flex flex-wrap gap-4 justify-center md:justify-start pt-6"
           >
             <Link href={"/projects"}>
               <Button
@@ -139,6 +128,29 @@ const HeroSection = () => {
               </a>
             </Button>
           </motion.div>
+        </div>
+
+        {/* Profile Image Container */}
+        <motion.div
+          variants={itemAnimation}
+          className="flex-1 flex justify-center md:justify-end w-full"
+        >
+          <div 
+            className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] mx-auto md:mx-0"
+            style={{
+              maskImage: 'radial-gradient(circle at center, black 40%, transparent 70%)',
+              WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 70%)'
+            }}
+          >
+            <Image 
+              src="/Dinath.jpg" 
+              alt={config.developer.name}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </motion.div>
 
      
 

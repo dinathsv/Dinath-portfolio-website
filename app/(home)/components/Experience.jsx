@@ -34,7 +34,7 @@ const ExperienceSection = () => {
     }
 
     return (
-        <section className="py-24" id="experience">
+        <section className="pt-24 pb-8" id="experience">
             <div className="container mx-auto px-6">
                 <motion.div
                     variants={containerAnimation}
