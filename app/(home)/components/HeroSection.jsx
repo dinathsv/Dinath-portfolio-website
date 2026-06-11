@@ -9,6 +9,53 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import SkillsShowcase from './SkillsShowcase';
 
+const leftLines = [
+  { left: '10%', duration: 3, delay: 0 },
+  { left: '30%', duration: 4.5, delay: 1.2 },
+  { left: '50%', duration: 2.5, delay: 0.5 },
+  { left: '70%', duration: 4, delay: 2 },
+  { left: '90%', duration: 3.5, delay: 0.8 },
+];
+
+const rightLines = [
+  { left: '10%', duration: 3.2, delay: 0.3 },
+  { left: '30%', duration: 4, delay: 1.5 },
+  { left: '50%', duration: 2.8, delay: 0.1 },
+  { left: '70%', duration: 3.6, delay: 1.8 },
+  { left: '90%', duration: 4.2, delay: 0.9 },
+];
+
+const MatrixRain = ({ linesData, isLeft }) => {
+  return (
+    <div className={`absolute top-0 bottom-0 ${isLeft ? 'left-2 md:left-8' : 'right-2 md:right-8'} w-16 md:w-32 pointer-events-none z-0 overflow-hidden`}
+      style={{
+        maskImage: 'linear-gradient(to bottom, black 30%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, black 30%, transparent 100%)'
+      }}
+    >
+      {linesData.map((line, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-[1px] md:w-[2px] h-[150px] md:h-[200px] bg-gradient-to-b from-transparent via-blue-500/40 to-transparent"
+          style={{
+            left: line.left,
+            top: '-250px'
+          }}
+          animate={{
+            y: ['0vh', '120vh']
+          }}
+          transition={{
+            duration: line.duration,
+            repeat: Infinity,
+            ease: "linear",
+            delay: line.delay
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 const containerAnimation = {
   hidden: { opacity: 0 },
   show: {
@@ -47,6 +94,9 @@ const textAnimation = {
 const HeroSection = () => {
   return (
     <section className="min-h-[calc(100vh-140px)] flex items-center justify-center relative bg-[#0B0B0C] overflow-hidden font-sans">
+      <MatrixRain linesData={leftLines} isLeft={true} />
+      <MatrixRain linesData={rightLines} isLeft={false} />
+
       <div 
         className="absolute inset-0 z-0 opacity-[0.15]" 
         style={{ 
