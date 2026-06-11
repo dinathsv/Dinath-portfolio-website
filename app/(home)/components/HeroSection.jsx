@@ -55,7 +55,7 @@ const HeroSection = () => {
             variants={containerAnimation}
             initial="hidden"
             animate="show"
-            className="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12 relative"
+            className="w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12 relative"
           >
             {/* Text Content */}
             <div className="flex-1 text-center md:text-left space-y-8">
