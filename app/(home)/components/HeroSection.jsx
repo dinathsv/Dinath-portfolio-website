@@ -7,7 +7,6 @@ import { config } from '@/config';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { motion } from 'framer-motion';
 import SkillsShowcase from './SkillsShowcase';
 
 const containerAnimation = {
