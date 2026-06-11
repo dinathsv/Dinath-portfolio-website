@@ -82,7 +82,7 @@ const Education = () => {
                                 >
                                     {/* True S-Curve Line Segment for Desktop */}
                                     {index !== education.length - 1 && (
-                                        <div className={`hidden md:block absolute top-[16px] -bottom-[64px] w-[35%] border-blue-500/40 shadow-[0_0_8px_rgba(59,130,246,0.4)] z-0 pointer-events-none ${
+                                        <div className={`hidden md:block absolute top-[16px] -bottom-[64px] w-[50%] border-blue-500/40 shadow-[0_0_8px_rgba(59,130,246,0.4)] z-0 pointer-events-none ${
                                             isLeft 
                                                 ? 'left-1/2 border-r-[1.5px] border-t-[1.5px] border-b-[1.5px] rounded-r-[100px]' 
                                                 : 'right-1/2 border-l-[1.5px] border-t-[1.5px] border-b-[1.5px] rounded-l-[100px]'

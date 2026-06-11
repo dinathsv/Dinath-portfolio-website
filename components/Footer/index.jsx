@@ -17,7 +17,7 @@ const Footer = () => {
                     <span className="hidden sm:inline">•</span>
                     <span className="whitespace-nowrap">All rights reserved</span>
                     <span className="hidden sm:inline">•</span>
-                    <span className="whitespace-nowrap">Made with {config.developer.name}</span>
+                    <span className="whitespace-nowrap">Made by {config.developer.name}</span>
                 </div>
             </div>
         </motion.footer>
