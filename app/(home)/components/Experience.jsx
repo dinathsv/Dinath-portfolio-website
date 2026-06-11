@@ -64,10 +64,9 @@ const ExperienceSection = () => {
                         </motion.div>
                     </div>
 
-                    <div className="max-w-7xl mx-auto relative px-4 md:px-8">
-                        <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-[1.5px] bg-gradient-to-b from-blue-500/40 via-blue-400/20 to-transparent -translate-x-1/2 shadow-[0_0_8px_rgba(59,130,246,0.4)]" />
-                        
-                        <div className="md:hidden absolute left-[31px] top-8 bottom-8 w-[1.5px] bg-gradient-to-b from-blue-500/40 via-blue-400/20 to-transparent shadow-[0_0_8px_rgba(59,130,246,0.4)]" />
+                    <div className="max-w-[1400px] w-full mx-auto relative px-4 lg:px-12">
+                        {/* Mobile straight line */}
+                        <div className="md:hidden absolute left-[31px] top-8 bottom-8 w-[1.5px] bg-gradient-to-b from-blue-500/40 via-blue-400/20 to-transparent shadow-[0_0_8px_rgba(59,130,246,0.4)] z-0" />
 
                         <motion.div
                             variants={containerAnimation}
@@ -81,12 +80,21 @@ const ExperienceSection = () => {
                                     variants={itemAnimation}
                                     className={`relative flex flex-col md:flex-row justify-between items-start w-full group ${!isLeft ? 'md:flex-row-reverse' : ''}`}
                                 >
+                                    {/* True S-Curve Line Segment for Desktop */}
+                                    {index !== experiences.length - 1 && (
+                                        <div className={`hidden md:block absolute top-[16px] -bottom-[64px] w-[35%] border-blue-500/40 shadow-[0_0_8px_rgba(59,130,246,0.4)] z-0 pointer-events-none ${
+                                            isLeft 
+                                                ? 'left-1/2 border-r-[1.5px] border-t-[1.5px] border-b-[1.5px] rounded-r-[100px]' 
+                                                : 'right-1/2 border-l-[1.5px] border-t-[1.5px] border-b-[1.5px] rounded-l-[100px]'
+                                        }`} />
+                                    )}
+
                                     <div className="absolute left-[15px] md:left-1/2 md:-translate-x-1/2 top-0 w-8 h-8 rounded-full bg-zinc-950/50 backdrop-blur-md border border-zinc-800 flex items-center justify-center shadow-[0_0_10px_rgba(0,0,0,0.5)] z-10 transition-all duration-300 group-hover:border-blue-500/50 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:scale-110">
                                         <HiBriefcase className="w-4 h-4 text-zinc-400 group-hover:text-blue-400 transition-colors" />
                                     </div>
 
                                     <div className={`w-full md:w-[47%] pl-16 md:pl-0 ${isLeft ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}>
-                                        <div className="bg-zinc-950/20 backdrop-blur-none border border-transparent rounded-2xl p-6 md:p-8 hover:bg-zinc-900/20 transition-all duration-300 relative overflow-hidden group-hover:border-zinc-800/50">
+                                        <div className="bg-zinc-950/20 backdrop-blur-none border border-transparent rounded-[2.5rem] p-8 md:p-10 hover:bg-zinc-900/20 transition-all duration-300 relative overflow-hidden group-hover:border-zinc-800/50 z-10">
                                             
                                             <div className="relative z-10">
                                                 <div className="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-3 mb-4">
