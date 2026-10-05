@@ -16,7 +16,7 @@ export const ProjectCard = ({ project, index }) => (
                     src={project.image || "/logo.jpg"}
                     alt={project.title}
                     loading="lazy"
-                    className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain w-full h-full p-2 bg-white/5 transform group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
             </div>
