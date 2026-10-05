@@ -155,6 +155,35 @@ const Education = () => {
                             })}
                         </motion.div>
                     </div>
+                    {/* Certifications */}
+                    {config.certifications && config.certifications.length > 0 && (
+                        <motion.div variants={itemAnimation} className="mt-20">
+                            <div className="max-w-2xl mx-auto text-center space-y-6 mb-12">
+                                <div
+                                    className="inline-flex items-center space-x-2 bg-secondary/10 border-[1.8px] border-zinc-900/70 px-4 py-2 rounded-full text-primary backdrop-blur-sm"
+                                >
+                                    <HiAcademicCap className="w-5 h-5 text-primary" />
+                                    <span className="text-sm font-medium text-primary">
+                                        Professional Certifications
+                                    </span>
+                                </div>
+                                <h3 className="text-2xl md:text-3xl font-bold text-primary">
+                                    Certifications
+                                </h3>
+                            </div>
+                            <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {config.certifications.map((cert, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="bg-zinc-950/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 hover:bg-zinc-900/70 hover:border-white/20 transition-all duration-300 flex items-start gap-3"
+                                    >
+                                        <span className="text-blue-400 mt-0.5 text-lg">🏅</span>
+                                        <span className="text-sm md:text-base text-white/80">{cert}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    )}
                 </motion.div>
             </div>
         </section>

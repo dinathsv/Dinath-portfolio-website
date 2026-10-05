@@ -15,13 +15,13 @@ const geistSans = localFont({
 });
 
 export const metadata = {
-  title: "Dinath Sivaranjan - Aspiring Data Scientist",
+  title: "Sivaranjan Dinath - Software Engineer",
   icons:{
 icon: "/logo.jpg"
   },
-  description: "Aspiring Data Scientist with expertise in machine learning, data analysis, and Python. View my projects, skills, and experience.",
-  keywords: "data scientist, machine learning, data analysis, Python, portfolio, AI, machine learning engineer",
-  author: "Dinath Sivaranjan",
+  description: "Software Engineering undergraduate skilled in Java and Python backend development, with hands-on experience building AI-integrated microservices and shipping production platforms.",
+  keywords: "software engineer, backend developer, Java, Python, Spring Boot, FastAPI, LangChain, Laravel, microservices, AI engineering, portfolio",
+  author: "Sivaranjan Dinath",
   robots: "index, follow",
 };
 

@@ -12,7 +12,7 @@ export const ProjectsList = ({ projects }) => (
         className="space-y-4"
     >
         {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+            <ProjectCard key={index} project={project} index={index} />
         ))}
     </motion.div>
 );

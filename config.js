@@ -1,13 +1,13 @@
-import { FaDiscord, FaGithub, FaMapPin } from "react-icons/fa";
-import { HiCode, HiCube, HiDatabase, HiMail, HiBriefcase } from "react-icons/hi";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiCode, HiCube, HiDatabase, HiMail, HiBriefcase, HiServer } from "react-icons/hi";
 
 export const config = {
     developer: {
-        name: "Dinath Sivaranjan",
+        name: "Sivaranjan Dinath",
     },
     social: {
         github: "dinathsv",
-        linkedin: "https://www.linkedin.com/in/dinath-sivaranjan"
+        linkedin: "https://www.linkedin.com/in/dinathsivaranjan"
     },
     NAV_ITEMS: [
         { href: '/projects', label: 'Projects' },
@@ -16,38 +16,52 @@ export const config = {
     recentTracks: true, // Enable/disable Spotify recent tracks
     projects: [
         {
-            title: "Foreign Shop System",
-            description: "Designed and developed a Laravel-based product and order management system for a foreign food retail business. Features manual payment workflows, SMS notifications, and clean UI.",
+            title: "ResQAI — AI-Powered Disaster & Emergency Relief Platform",
+            description: "Built the Python FastAPI AI microservice powering LLM-driven situational summaries, multilingual report translation, and a trilingual first-aid chatbot. Designed the PostGIS geospatial database schema and implemented the resource-locator service.",
+            image: "/projects/resqai_logo.jpeg",
+            technologies: ["Python", "FastAPI", "Node.js", "Express", "React Native", "PostgreSQL/PostGIS", "Redis", "Docker", "LLM Integration"],
+            github: "https://github.com/dinathsv/resqai-platform"
+        },
+        {
+            title: "CORE — Centralized Operations & Routing Engine",
+            description: "AI-augmented supply chain platform embedding a conversational AI agent into the operational layer of a microservices system. Features API gateway, Kafka event-driven messaging, demand-forecasting, and LangChain-based RAG.",
+            image: "/projects/CORE_logo.png",
+            technologies: ["Java", "Spring Boot", "Spring Cloud Gateway", "Apache Kafka", "Python", "FastAPI", "LangChain", "RAG"],
+            github: "https://github.com/dinathsv/CORE---Centralized-Operations-Routing-Engine-AI-Augmented-Supply-Chain-Platform-"
+        },
+        {
+            title: "ivy.lk — E-Commerce Order Management System",
+            description: "Independently designed, built, and deployed a production Laravel e-commerce platform for a client. Features role-based access control, dynamic pricing, SMS notifications, and automated PDF invoicing (DomPDF).",
             image: "/projects/IVY_logo.jpeg",
-            technologies: ["Laravel", "Asynchronous Processing"],
+            technologies: ["Laravel 12", "PHP 8.2", "MySQL", "Blade", "Alpine.js", "Tailwind CSS", "Vite", "PHPUnit"],
             demo: "https://ivy.lk"
         },
         {
-            title: "MAMcargo — Dual-Frontend Logistics",
-            description: "Developed a high-performance logistics and e-commerce ecosystem using Laravel 12 and Vite. The platform features a dual-frontend architecture managing MAMcargo and ClickLanka.",
-            image: "/projects/MAMcrago_logo.jpeg",
-            technologies: ["PHP 8.2", "Laravel 12", "Blade", "Vite", "MySQL", "PHPUnit", "Asynchronous Processing"],
-            demo: "https://mamcargo.com/"
+            title: "vfix.lk — Service Booking & Workforce Management",
+            description: "Production-ready service booking and worker management platform. Implemented role-based architecture, state-driven booking lifecycle, admin dashboards, and automated PDF invoicing.",
+            image: "/projects/VFIX_logo.jpeg",
+            technologies: ["Laravel 12", "PHP 8.2", "MariaDB", "Blade", "Alpine.js", "Tailwind CSS", "Vite", "PHPUnit"],
+            demo: "https://vfix.lk/"
         },
         {
-            title: "VFIX – Service Booking Platform",
-            description: "Production-ready service booking and worker management platform. Implemented backend using Laravel with a role-based architecture and state-driven booking lifecycle.",
-            image: "/projects/VFIX_logo.jpeg",
-            technologies: ["Laravel", "MariaDB / MySQL", "Database Design & Integration"],
-            demo: "https://vfix.lk/"
+            title: "mamcargo.com — Dual-Brand Logistics & Export Platform",
+            description: "Developed a high-performance dual-brand logistics and export platform. Features dual-frontend architecture, state-driven business logic, admin dashboards, and managed full deployment lifecycle.",
+            image: "/projects/MAMcrago_logo.jpeg",
+            technologies: ["Laravel 12", "PHP 8.2", "MySQL", "Blade", "Alpine.js", "Tailwind CSS", "Vite", "PHPUnit"],
+            demo: "https://mamcargo.com/"
         },
         {
             title: "Complaint BOX – Digital Complaint Management System",
             description: "Web-based system supporting Complainers, Handlers, and Administrators. Focused on clean interface, secure authentication, and smooth navigation.",
             image: "/logo.jpg",
-            technologies: ["PHP", "HTML", "CSS", "JavaScript", "MariaDB", "Role-Based Access Control (RBAC)"],
+            technologies: ["PHP", "HTML", "CSS", "JavaScript", "MariaDB", "RBAC"],
             github: "https://github.com/Dinath2002/complaint-box-system.git"
         },
         {
             title: "Student Event Management System",
             description: "Dynamic web application to simplify university event coordination and registration. Features strong database integration and a modern dark-themed interface.",
             image: "/logo.jpg",
-            technologies: ["HTML", "CSS", "JavaScript", "PHP", "MariaDB", "UI/UX Design", "Full Stack Web Development"],
+            technologies: ["HTML", "CSS", "JavaScript", "PHP", "MariaDB"],
             github: "https://github.com/Dinath2002/student-event-management.git"
         },
         {
@@ -60,96 +74,110 @@ export const config = {
     ],
     skills: [
         {
-            title: "Frontend",
+            title: "Languages",
             icon: <HiCode />,
-            description: "Modern web interfaces",
+            description: "Programming Languages",
             bgClass: "bg-blue-500/10",
             iconClass: "text-blue-500",
             skills: [
-                { name: "JavaScript", level: "Advanced", hot: true },
-                { name: "React", level: "Advanced" },
-                { name: "TailwindCSS", level: "Expert" },
-                { name: "HTML", level: "Intermediate" },
-                { name: "UI/UX Design", level: "Advanced" },
-                { name: "Full Stack Web Development", level: "Advanced" }
+                { name: "Java", level: "Advanced", hot: true },
+                { name: "Python", level: "Advanced", hot: true },
+                { name: "PHP", level: "Advanced" },
+                { name: "JavaScript", level: "Advanced" },
+                { name: "SQL", level: "Advanced" },
+                { name: "GO", level: "Intermediate" }
             ]
         },
         {
-            title: "Backend",
+            title: "Frameworks",
+            icon: <HiCube />,
+            description: "Frameworks & Libraries",
+            bgClass: "bg-purple-500/10",
+            iconClass: "text-purple-500",
+            skills: [
+                { name: "Spring Boot", level: "Advanced", hot: true },
+                { name: "FastAPI", level: "Advanced", hot: true },
+                { name: "LangChain", level: "Advanced" },
+                { name: "Django", level: "Advanced" },
+                { name: "Laravel", level: "Expert" },
+                { name: "Node.js/Express", level: "Advanced" },
+                { name: "Tailwind CSS", level: "Expert" },
+                { name: "Blade", level: "Advanced" }
+            ]
+        },
+        {
+            title: "Databases",
             icon: <HiDatabase />,
-            description: "Server & Database",
+            description: "Database Systems",
             bgClass: "bg-emerald-500/10",
             iconClass: "text-emerald-500",
             skills: [
-                { name: "Python (Django)", level: "Advanced", hot: true },
-                { name: "Laravel", level: "Advanced", hot: true },
-                { name: "Node.js", level: "Advanced" },
-                { name: "MariaDB / MySQL", level: "Advanced" },
-                { name: "Java", level: "Intermediate" },
-                { name: "PHP", level: "Intermediate" },
-                { name: "Asynchronous Processing", level: "Intermediate" },
-                { name: "Role-Based Access Control (RBAC)", level: "Advanced" }
+                { name: "PostgreSQL (PostGIS)", level: "Advanced", hot: true },
+                { name: "MySQL", level: "Expert" },
+                { name: "MariaDB", level: "Advanced" },
+                { name: "SQLite", level: "Advanced" },
+                { name: "Firebase", level: "Intermediate" },
+                { name: "Supabase", level: "Intermediate" }
             ]
         },
         {
-            title: "Programs & Tools",
-            icon: <HiCube />,
-            description: "Development & Productivity Tools",
+            title: "Tools & Platforms",
+            icon: <HiServer />,
+            description: "DevOps & Infrastructure",
             bgClass: "bg-orange-500/10",
             iconClass: "text-orange-500",
             skills: [
-                { name: "VS Code", level: "Expert", hot: true },
-                { name: "IntelliJ IDEA", level: "Advanced" },
-                { name: "PyCharm", level: "Intermediate" },
-                { name: "Git", level: "Advanced" },
-                { name: "React", level: "Intermediate" },
-                { name: "PyTorch", level: "Intermediate" }
+                { name: "Git & GitHub", level: "Expert", hot: true },
+                { name: "Docker", level: "Advanced", hot: true },
+                { name: "Apache Kafka", level: "Advanced" },
+                { name: "REST APIs", level: "Expert" },
+                { name: "Redis", level: "Advanced" },
+                { name: "PHPUnit", level: "Advanced" },
+                { name: "Linux", level: "Advanced" },
+                { name: "cPanel & DNS", level: "Advanced" }
             ]
         }
     ],
     experiences: [
         {
-            position: "Full Stack Developer",
-            company: "Inncome Developers",
-            period: "Dec 2025 - Present",
-            location: "Sri Lanka (Remote)",
-            description: "Developed end-to-end web and software solutions, managing the complete development lifecycle. Contributed to digital transformation initiatives through scalable web applications.",
+            position: "Backend Developer",
+            company: "Freelance / Self-Employed",
+            period: "Oct 2025 - Oct 2026",
+            location: "Sri Lanka",
+            description: "Delivered 3 production-grade platforms for independent clients, managing the full development lifecycle from scoping to deployment.",
             responsibilities: [
-                "Developed end-to-end web and software solutions, managing the complete development lifecycle.",
-                "Translated client requirements into intuitive UI/UX designs, enhancing user engagement.",
-                "Architected robust back-end systems and managed cloud deployments, ensuring high performance.",
-                "Contributed to digital transformation initiatives through scalable web applications at Inncome Developers."
+                "Delivered 3 production-grade platforms for independent clients (ivy.lk, vfix.lk, mamcargo.com), managing the full development lifecycle from scoping to deployment.",
+                "Architected backend systems and role-based access control; handled domain purchase, DNS configuration, and secure deployment across 3 live production systems.",
+                "Replaced manual, paper-based business workflows with automated booking, order, and logistics platforms for real clients."
             ],
-            technologies: ["Full Stack Development", "UI/UX Design", "Backend Systems", "Cloud Deployment", "Web Applications"]
+            technologies: ["Laravel 12", "PHP 8.2", "MySQL", "MariaDB", "Blade", "Alpine.js", "Tailwind CSS", "Vite", "PHPUnit"]
         },
         {
             position: "Banking Trainee",
             company: "People's Bank",
             period: "Feb 2024 - Jun 2024",
-            location: "Chenkalady, Remote",
-            description: "Completed a comprehensive 5-month banking trainee program focused on financial operations, client relationship management, and banking fundamentals. Gained hands-on experience in banking services, customer support, and operational excellence.",
+            location: "Chenkalady",
+            description: "Assisted 80+ customers daily, maintained financial records with 100% accuracy, and enforced KYC/AML compliance while mentoring 5 new trainees.",
             responsibilities: [
-                "Learned and implemented banking operations and financial service protocols",
-                "Developed client management skills and maintained exceptional customer relationships",
-                "Understood core banking systems and operational procedures",
-                "Provided professional customer support in the financial services sector",
-                "Contributed to delivering high-quality customer experiences",
-                "Gained practical knowledge of banking products and services"
+                "Assisted 80+ customers daily with banking operations and financial services.",
+                "Maintained financial records with 100% accuracy across all transactions.",
+                "Enforced KYC/AML compliance protocols and banking regulations.",
+                "Mentored 5 new trainees on banking procedures and customer service standards."
             ],
-            technologies: ["Banking Operations", "Customer Service", "Financial Services", "Client Management", "Banking Systems"]
+            technologies: ["Banking Operations", "KYC/AML Compliance", "Financial Records", "Customer Service", "Team Mentorship"]
         }
     ],
     education: [
         {
-            degree: "National Diploma in Information Technology (NDT)",
-            institution: "Institute of Technology, University of Moratuwa",
+            degree: "National Diploma in IT (NDT)",
+            institution: "ITUM, University of Moratuwa",
             period: "Feb 2025 - Feb 2028",
             field: "Information Technology",
             status: "Pursuing",
             description: "Comprehensive diploma program in Information Technology focusing on modern software development, database management, and IT infrastructure."
         },
         {
-            degree: "Bachelor of Information Technology (BIT) - External",
+            degree: "Bachelor of IT (BIT), External",
             institution: "University of Moratuwa",
             period: "Mar 2024 - Mar 2027",
             field: "Information Technology",
@@ -157,41 +185,20 @@ export const config = {
             description: "Advanced degree program in Information Technology with emphasis on software engineering, data science, and emerging technologies."
         },
         {
-            degree: "Diploma in Information Technology",
+            degree: "Diploma in IT & English",
             institution: "ESOFT Metro Campus",
-            period: "Mar 2022 - Mar 2023",
-            field: "Information Technology",
+            period: "2022 - 2023",
+            field: "Information Technology & English",
             grade: "Merit",
             status: "Completed",
-            description: "Professional diploma in IT with practical exposure to programming, database systems, and web development."
-        },
-        {
-            degree: "Diploma in English",
-            institution: "ESOFT Metro Campus",
-            period: "Mar 2022 - Mar 2023",
-            field: "English",
-            grade: "Merit",
-            status: "Completed",
-            description: "Professional qualification in English language and communication skills."
-        },
-        {
-            degree: "Advanced Level - Physical Science",
-            institution: "Methodist Central College",
-            period: "Jan 2013 - Jan 2022",
-            field: "Physical Science",
-            status: "Completed",
-            description: "Advanced level education with specialization in Physical Science. Active participant in sports and student leadership (Cricketer | Prefect).",
-            activities: ["Cricketer", "Prefect"]
-        },
-        {
-            degree: "Ordinary Level Education",
-            institution: "Chenkalady Central College",
-            period: "Jan 2008 - Dec 2012",
-            field: "General Education",
-            status: "Completed",
-            description: "Foundation education with active participation in student leadership and extracurricular activities (Junior Prefect).",
-            activities: ["Junior Prefect"]
+            description: "Professional diploma in IT and English with practical exposure to programming, database systems, web development, and communication skills."
         }
+    ],
+    certifications: [
+        "AI/ML Engineer Certification (Stages 1–3) - SLIIT",
+        "Fundamentals of Java Programming (Coursera)",
+        "Java Intermediate Course (Sololearn)",
+        "Prompt Design in Vertex AI Skill Badge (Google Cloud)"
     ],
     contactInfo: [
         {
@@ -207,10 +214,10 @@ export const config = {
             link: "mailto:sdinath0528@gmail.com"
         },
         {
-            icon: <HiMail className="w-5 h-5" />,
+            icon: <FaLinkedin className="w-5 h-5" />,
             label: "LinkedIn",
             value: "Dinath Sivaranjan",
-            link: "https://www.linkedin.com/in/dinath-sivaranjan"
+            link: "https://www.linkedin.com/in/dinathsivaranjan"
         }
     ]
 }

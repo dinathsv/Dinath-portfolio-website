@@ -129,7 +129,7 @@ const HeroSection = () => {
                 </motion.h1>
                 <motion.div variants={itemAnimation} className="pt-1">
                   <h2 className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-medium tracking-wide text-sm sm:text-base">
-                    Aspiring Data Scientist
+                    Software Engineer
                   </h2>
                 </motion.div>
               </div>
@@ -138,7 +138,7 @@ const HeroSection = () => {
                 variants={itemAnimation}
                 className="text-base sm:text-lg text-[#a1a1aa] leading-relaxed mx-auto md:mx-0"
               >
-               Passionate about transforming data into actionable insights. Specializing in <span className="font-semibold text-zinc-200">machine learning</span>, <span className="font-semibold text-zinc-200">statistical analysis</span>, and <span className="font-semibold text-zinc-200">data visualization</span>. Building intelligent solutions that drive decision-making.
+               Software Engineering undergraduate skilled in <span className="font-semibold text-zinc-200">Java and Python backend development</span>, with hands-on experience building <span className="font-semibold text-zinc-200">AI-integrated microservices</span> (FastAPI, LangChain, PostGIS) and shipping <span className="font-semibold text-zinc-200">3 live production platforms</span> for clients.
               </motion.p>
 
           <motion.div
