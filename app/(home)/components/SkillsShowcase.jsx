@@ -3,17 +3,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HiCode } from 'react-icons/hi';
-import { FaNodeJs, FaGithub, FaPython, FaJava } from 'react-icons/fa';
-import { SiMariadb, SiTailwindcss, SiPandas, SiNumpy, SiReact, SiArchlinux, SiPostgresql, SiSpringboot } from 'react-icons/si';
+import { FaNodeJs, FaGithub, FaPython, FaJava, FaGolang } from 'react-icons/fa6';
+import { SiPandas, SiNumpy, SiReact, SiArchlinux, SiPostgresql, SiSpringboot } from 'react-icons/si';
 
 const skills = [
     { name: "Java", icon: <FaJava className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1" },
-    { name: "MariaDB", icon: <SiMariadb className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
+    { name: "Go", icon: <FaGolang className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
     { name: "Node.js", icon: <FaNodeJs className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
     { name: "Python", icon: <FaPython className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 sm:row-span-2 row-span-1" },
     { name: "Arch Linux", icon: <SiArchlinux className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1" },
     { name: "GitHub", icon: <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
-    { name: "Tailwind", icon: <SiTailwindcss className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
+    { name: "Ballerina", icon: <HiCode className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
     { name: "NumPy", icon: <SiNumpy className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
     { name: "PostgreSQL", icon: <SiPostgresql className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-1 row-span-1" },
     { name: "Spring Boot", icon: <SiSpringboot className="w-5 h-5 sm:w-6 sm:h-6" />, size: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1" },
