@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiCode, HiCube, HiDatabase, HiMail, HiBriefcase, HiServer } from "react-icons/hi";
+import { HiCode, HiCube, HiDatabase, HiMail, HiBriefcase, HiServer, HiLightningBolt, HiPhone } from "react-icons/hi";
+import { SiOpenai } from "react-icons/si";
 
 export const config = {
     developer: {
@@ -7,7 +8,7 @@ export const config = {
     },
     social: {
         github: "dinathsv",
-        linkedin: "https://www.linkedin.com/in/dinathsivaranjan"
+        linkedin: "https://www.linkedin.com/in/dinath-sivaranjan"
     },
     NAV_ITEMS: [
         { href: '/projects', label: 'Projects' },
@@ -82,27 +83,58 @@ export const config = {
             skills: [
                 { name: "Java", level: "Advanced", hot: true },
                 { name: "Python", level: "Advanced", hot: true },
-                { name: "PHP", level: "Advanced" },
+                { name: "Go", level: "Intermediate" },
+                { name: "Ballerina", level: "Intermediate" },
                 { name: "JavaScript", level: "Advanced" },
                 { name: "SQL", level: "Advanced" },
-                { name: "GO", level: "Intermediate" }
+                { name: "PHP", level: "Advanced" }
             ]
         },
         {
-            title: "Frameworks",
+            title: "Backend & Frameworks",
             icon: <HiCube />,
             description: "Frameworks & Libraries",
             bgClass: "bg-purple-500/10",
             iconClass: "text-purple-500",
             skills: [
                 { name: "Spring Boot", level: "Advanced", hot: true },
+                { name: "Spring Cloud Gateway", level: "Advanced", hot: true },
                 { name: "FastAPI", level: "Advanced", hot: true },
-                { name: "LangChain", level: "Advanced" },
-                { name: "Django", level: "Advanced" },
-                { name: "Laravel", level: "Expert" },
+                { name: "SQLAlchemy", level: "Advanced" },
                 { name: "Node.js/Express", level: "Advanced" },
-                { name: "Tailwind CSS", level: "Expert" },
-                { name: "Blade", level: "Advanced" }
+                { name: "Laravel", level: "Expert" }
+            ]
+        },
+        {
+            title: "APIs & Architecture",
+            icon: <HiLightningBolt />,
+            description: "API Design & System Architecture",
+            bgClass: "bg-cyan-500/10",
+            iconClass: "text-cyan-500",
+            skills: [
+                { name: "REST APIs", level: "Expert", hot: true },
+                { name: "API Gateway", level: "Advanced" },
+                { name: "Microservices", level: "Advanced", hot: true },
+                { name: "Event-Driven Architecture", level: "Advanced" },
+                { name: "Apache Kafka", level: "Advanced" },
+                { name: "OAuth2 / JWT", level: "Advanced" },
+                { name: "RBAC", level: "Advanced" },
+                { name: "Rate Limiting", level: "Advanced" }
+            ]
+        },
+        {
+            title: "AI & Machine Learning",
+            icon: <SiOpenai />,
+            description: "AI/ML Engineering & Integration",
+            bgClass: "bg-pink-500/10",
+            iconClass: "text-pink-500",
+            skills: [
+                { name: "Scikit-Learn", level: "Advanced", hot: true },
+                { name: "Google Vertex AI / Gemini", level: "Advanced", hot: true },
+                { name: "LLM Integration", level: "Advanced" },
+                { name: "RAG", level: "Advanced" },
+                { name: "LangChain", level: "Advanced" },
+                { name: "Prompt Engineering", level: "Advanced" }
             ]
         },
         {
@@ -114,6 +146,7 @@ export const config = {
             skills: [
                 { name: "PostgreSQL (PostGIS)", level: "Advanced", hot: true },
                 { name: "MySQL", level: "Expert" },
+                { name: "Redis", level: "Advanced", hot: true },
                 { name: "MariaDB", level: "Advanced" },
                 { name: "SQLite", level: "Advanced" },
                 { name: "Firebase", level: "Intermediate" },
@@ -121,19 +154,19 @@ export const config = {
             ]
         },
         {
-            title: "Tools & Platforms",
+            title: "DevOps & Tools",
             icon: <HiServer />,
             description: "DevOps & Infrastructure",
             bgClass: "bg-orange-500/10",
             iconClass: "text-orange-500",
             skills: [
-                { name: "Git & GitHub", level: "Expert", hot: true },
                 { name: "Docker", level: "Advanced", hot: true },
-                { name: "Apache Kafka", level: "Advanced" },
-                { name: "REST APIs", level: "Expert" },
-                { name: "Redis", level: "Advanced" },
-                { name: "PHPUnit", level: "Advanced" },
+                { name: "Kubernetes", level: "Intermediate" },
+                { name: "Docker Compose", level: "Advanced", hot: true },
+                { name: "Git & GitHub", level: "Expert" },
                 { name: "Linux", level: "Advanced" },
+                { name: "Pytest", level: "Advanced" },
+                { name: "PHPUnit", level: "Advanced" },
                 { name: "cPanel & DNS", level: "Advanced" }
             ]
         }
@@ -214,10 +247,16 @@ export const config = {
             link: "mailto:sdinath0528@gmail.com"
         },
         {
+            icon: <HiPhone className="w-5 h-5" />,
+            label: "Phone",
+            value: "+94 757241062",
+            link: "tel:+94757241062"
+        },
+        {
             icon: <FaLinkedin className="w-5 h-5" />,
             label: "LinkedIn",
             value: "Dinath Sivaranjan",
-            link: "https://www.linkedin.com/in/dinathsivaranjan"
+            link: "https://www.linkedin.com/in/dinath-sivaranjan"
         }
     ]
 }

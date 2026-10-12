@@ -138,7 +138,7 @@ const HeroSection = () => {
               variants={itemAnimation}
               className="text-base sm:text-lg text-[#a1a1aa] leading-relaxed mx-auto md:mx-0"
             >
-              Software Engineering undergraduate skilled in <span className="font-semibold text-zinc-200">Java and Python backend development</span>, with hands-on experience building <span className="font-semibold text-zinc-200">AI-integrated microservices</span> (FastAPI, LangChain, PostGIS) and shipping <span className="font-semibold text-zinc-200">3 live production platforms</span> for clients.
+              Software Engineering undergraduate skilled in <span className="font-semibold text-zinc-200">Java and Python backend development</span>, with hands-on experience building <span className="font-semibold text-zinc-200">AI-integrated microservices</span> (FastAPI, LangChain, PostGIS) and developing <span className="font-semibold text-zinc-200">10+ full-stack applications</span>, including shipping <span className="font-semibold text-zinc-200">3 live production platforms</span> for clients. Seeking a <span className="font-semibold text-zinc-200">Software Engineer Internship</span> to apply strong backend architecture, problem-solving, and AI engineering skills within a fast-paced engineering team.
             </motion.p>
 
             <motion.div
