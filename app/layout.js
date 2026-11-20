@@ -1,67 +1,31 @@
 import localFont from "next/font/local";
-import "./globals.css";
-import GridPattern from "@/components/ui/grid-pattern";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/Providers/Theme";
 import Header from "@/components/Header";
-import { Toaster } from "sonner";
 import Footer from "@/components/Footer";
-import NextTopLoader from "nextjs-toploader";
+import "./globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
   weight: "100 900",
+  display: "swap",
 });
 
 export const metadata = {
-  title: "Sivaranjan Dinath - Software Engineer",
-  icons:{
-icon: "/logo.jpg"
+  title: {
+    default: "Sivaranjan Dinath — Software Engineering Portfolio",
+    template: "%s — Sivaranjan Dinath",
   },
-  description: "Software Engineering undergraduate skilled in Java and Python backend development, with hands-on experience building AI-integrated microservices and shipping production platforms.",
-  keywords: "software engineer, backend developer, Java, Python, Spring Boot, FastAPI, LangChain, Laravel, microservices, AI engineering, portfolio",
-  author: "Sivaranjan Dinath",
-  robots: "index, follow",
+  description: "Sivaranjan Dinath is a software engineering undergraduate in Sri Lanka building backend systems, AI services, and web platforms.",
+  authors: [{ name: "Sivaranjan Dinath" }],
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.className} antialiased`}
-      >
-
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-
-          <NextTopLoader />
-          <Header />
-
-          {children}
-
-          <Footer />
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              className: 'font-semibold backdrop-blur-md text-black rounded-3xl',
-            }}
-          />
-
-          <GridPattern
-            width={200}
-            height={200}
-            x={-1}
-            y={-1}
-            className={cn(
-              "[mask-image:linear-gradient(to_bottom,white,transparent)]",
-            )}
-          />
-        </ThemeProvider>
+    <html lang="en">
+      <body className={geistSans.className} id="top">
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <Header />
+        <main id="main-content" tabIndex={-1}>{children}</main>
+        <Footer />
       </body>
     </html>
   );

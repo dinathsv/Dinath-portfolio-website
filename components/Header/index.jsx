@@ -1,199 +1,95 @@
-"use client"
-import React, { useState } from 'react';
-import { HiMenu, HiX } from 'react-icons/hi';
-import { Button } from '@/components/ui/button';
-import { config } from '@/config';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+"use client";
 
-const NAV_ITEMS = config.NAV_ITEMS;
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
-const NavLink = ({ href, label, isMobile = false }) => {
-    const pathname = usePathname();
-    const isActive = pathname === href;
+const navigation = [
+  { label: "Overview", href: "/" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/#about" },
+];
 
-    return (
-        <Link
-            href={href}
-            className="relative"
-        >
-            <motion.span
-                className={`relative ${isMobile ? 'px-4 py-3 text-base' : 'px-4 py-2'} text-gray-300 hover:text-white transition-colors ${isActive ? 'text-white' : ''}`}
-                whileHover={{ scale: isMobile ? 1 : 1.05 }}
-                whileTap={{ scale: 0.95 }}
-            >
-                {label}
-                {isActive && (
-                    <motion.div
-                        className="absolute inset-0 bg-secondary/30  rounded-lg backdrop-blur-sm"
-                        layoutId="activeNavBackground"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 300,
-                            damping: 30
-                        }}
-                        style={{
-                            zIndex: -1
-                        }}
-                    />
-                )}
-            </motion.span>
-        </Link>
-    );
-};
+export default function Header() {
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [section, setSection] = useState(null);
+  const menuButton = useRef(null);
+  const header = useRef(null);
+  const nav = useRef(null);
 
-const Logo = ({ isMobile = false }) => (
-    <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-    >
-        <Link
-            href="/"
-            className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
-        >
-            <motion.div
-                whileHover={{ opacity:0.5 }}
-                whileTap={{ scale: 0.95 }}
-            >
-                <Image
-                    src="/logo.jpg"
-                    width={2000}
-                    height={2000}
-                    alt='logo'
-                    className={`${isMobile ? 'w-10 h-10' : 'w-12 h-12 sm:w-14 sm:h-14'} rounded-full`}
-                />
-            </motion.div>
-            <motion.span
-                className={`text-gray-300 font-semibold ${isMobile ? 'hidden' : 'text-base sm:text-lg'}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-            >
-                <span className="hidden sm:inline">{config.developer.name}</span>
-            </motion.span>
-        </Link>
-    </motion.div>
-);
-
-const Navigation = ({ isMobile = false, onLinkClick }) => (
-    <motion.nav
-        className={isMobile ? "flex flex-col space-y-4" : "hidden md:flex space-x-2"}
-        initial={isMobile ? { opacity: 0 } : { opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: isMobile ? 0 : 0.3, duration: 0.5 }}
-    >
-        {NAV_ITEMS.map((item, index) => (
-            <motion.div
-                key={item.href}
-                initial={isMobile ? { opacity: 0, x: -20 } : { opacity: 0, y: -20 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ delay: isMobile ? index * 0.1 : 0.1 * index }}
-                onClick={onLinkClick}
-            >
-                <NavLink {...item} isMobile={isMobile} />
-            </motion.div>
-        ))}
-    </motion.nav>
-);
-
-const ContactButton = ({ isMobile = false, onLinkClick }) => (
-    <motion.div
-        className={`flex items-center ${isMobile ? 'w-full justify-center mt-4' : 'space-x-6'}`}
-        initial={{ opacity: 0, x: isMobile ? 0 : 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: isMobile ? 0.5 : 0.4, duration: 0.5 }}
-        onClick={onLinkClick}
-    >
-        <Link href={`https://github.com/${config.social.github}`} target='_blank' className={isMobile ? 'w-full' : ''}>
-            <Button className={`${isMobile ? 'w-full' : ''} rounded-2xl font-semibold bg-white text-gray-900 hover:bg-gray-200 text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3`}>
-                <span className="hidden sm:inline">Repo Inside!</span>
-                <span className="sm:hidden">Template</span>
-            </Button>
-        </Link>
-    </motion.div>
-);
-
-const Header = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const updateSection = () => {
+      const offset = header.current.offsetHeight + window.innerHeight * 0.25;
+      const about = document.getElementById("about");
+      const work = document.getElementById("work");
+      if (about && about.getBoundingClientRect().top <= offset) setSection("About");
+      else if (work && work.getBoundingClientRect().top <= offset) setSection("Projects");
+      else setSection("Overview");
     };
-
-    const closeMobileMenu = () => {
-        setIsMobileMenuOpen(false);
+    updateSection();
+    window.addEventListener("scroll", updateSection, { passive: true });
+    window.addEventListener("resize", updateSection);
+    return () => {
+      window.removeEventListener("scroll", updateSection);
+      window.removeEventListener("resize", updateSection);
     };
+  }, [pathname]);
 
-    return (
-        <>
-            <motion.header
-                className="py-4 sm:py-6 md:py-9 z-50 text-white"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-            >
-                <div className="container mx-auto flex items-center justify-between md:px-64 px-4 sm:px-6">
-                    <Logo />
-                    <Navigation />
-                    <div className="hidden md:block">
-                        <ContactButton />
-                    </div>
-                    
-                    <button
-                        onClick={toggleMobileMenu}
-                        className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
-                        aria-label="Toggle menu"
-                    >
-                        {isMobileMenuOpen ? (
-                            <HiX className="w-6 h-6" />
-                        ) : (
-                            <HiMenu className="w-6 h-6" />
-                        )}
-                    </button>
-                </div>
-            </motion.header>
+  useEffect(() => {
+    if (!menuOpen) return;
+    nav.current?.querySelector("a")?.focus();
+    const onKey = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    const closeIfOutside = (event) => {
+      if (!header.current?.contains(event.target)) setMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", closeIfOutside);
+    document.addEventListener("focusin", closeIfOutside);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", closeIfOutside);
+      document.removeEventListener("focusin", closeIfOutside);
+    };
+  }, [menuOpen]);
 
-            <AnimatePresence>
-                {isMobileMenuOpen && (
-                    <>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 md:hidden"
-                            onClick={closeMobileMenu}
-                        />
-                        
-                        <motion.div
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="fixed top-0 right-0 h-full w-64 bg-black/95 backdrop-blur-md border-l border-white/10 z-50 md:hidden overflow-y-auto"
-                        >
-                            <div className="flex flex-col h-full p-6">
-                                <div className="mb-8">
-                                    <Logo isMobile={true} />
-                                </div>
+  const active = pathname === "/" ? section || "Overview" : pathname === "/projects" ? "Projects" : "Contact";
 
-                                <div className="flex-1">
-                                    <Navigation isMobile={true} onLinkClick={closeMobileMenu} />
-                                </div>
-
-                                <ContactButton isMobile={true} onLinkClick={closeMobileMenu} />
-                            </div>
-                        </motion.div>
-                    </>
-                )}
-            </AnimatePresence>
-        </>
-    );
-};
-
-export default Header;
+  return (
+    <header className="site-header" ref={header}>
+      <div className="page-width header-inner">
+        <Link href="/" className="wordmark" aria-label="Sivaranjan Dinath, home" onClick={() => setMenuOpen(false)}>
+          <span className="brand-icon" aria-hidden="true">sd<span>.</span></span>
+          <span>Sivaranjan Dinath</span>
+        </Link>
+        <nav ref={nav} className={`top-nav${menuOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="Primary">
+          {navigation.map(({ href, label }) => (
+            <Link key={href} href={href} aria-current={active === label ? (href === pathname ? "page" : "location") : undefined} onClick={() => setMenuOpen(false)}>
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <div className="header-actions">
+          <Link href="/contact" className="contact-link" aria-current={active === "Contact" ? "page" : undefined} onClick={() => setMenuOpen(false)}>
+            Get in touch
+          </Link>
+          <button
+            className="menu-trigger" ref={menuButton} type="button"
+            aria-expanded={menuOpen} aria-controls="primary-navigation"
+            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+            onClick={() => setMenuOpen(value => !value)}
+          >
+            {menuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}

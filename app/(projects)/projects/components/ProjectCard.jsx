@@ -1,91 +1,92 @@
-"use client"
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
-import { itemAnimation } from './Animations';
+import Image from "next/image";
+import { CalendarDays, Code2, Gavel, Github, Globe2, Inbox } from "lucide-react";
+import styles from "./projects.module.css";
 
-export const ProjectCard = ({ project, index }) => (
-    <motion.div
-        variants={itemAnimation}
-        className="group flex flex-col sm:flex-row items-stretch gap-6 bg-secondary/5 hover:bg-secondary/10 p-4 rounded-xl transition-colors duration-300"
-    >
-        <div className="sm:w-1/3">
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                <img
-                    src={project.image || "/logo.jpg"}
-                    alt={project.title}
-                    loading="lazy"
-                    className="object-contain w-full h-full p-2 bg-white/5 transform group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
-            </div>
+const covers = {
+  "/projects/resqai_logo.jpeg": {
+    image: "/projects/resqai-relief-map.webp",
+    category: "Geospatial AI",
+    summary: "Multilingual emergency reporting, first-aid guidance and a map of nearby relief resources.",
+  },
+  "/projects/CORE_logo.png": {
+    image: "/projects/core-routing-engine.webp",
+    category: "Distributed systems",
+    summary: "An event-driven supply chain platform with demand forecasting and a conversational AI agent.",
+  },
+  "/projects/IVY_logo.jpeg": {
+    image: "/projects/ivy-order-receipt.webp",
+    category: "E-commerce",
+    summary: "A live order management platform with dynamic pricing, SMS updates and automated invoices.",
+  },
+};
+
+const appIcons = {
+  "Complaint BOX – Digital Complaint Management System": Inbox,
+  "Student Event Management System": CalendarDays,
+  "Online Auction & E-Commerce Shopping System": Gavel,
+};
+
+function ProjectCover({ project, cover, featured }) {
+  if (project.image === "/logo.jpg" || !project.image) {
+    const Icon = appIcons[project.title] || Code2;
+    return (
+      <div className={`${styles.cover} ${styles.symbolCover}`} aria-hidden="true">
+        <span><Icon size={48} strokeWidth={1.25} /></span>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`${styles.cover} ${cover ? "" : styles.logoCover}`}>
+      <Image
+        src={cover?.image || project.image}
+        alt=""
+        fill
+        sizes={featured ? "(min-width: 920px) 31vw, (min-width: 660px) 45vw, 92vw" : "(min-width: 760px) 44vw, 92vw"}
+      />
+    </div>
+  );
+}
+
+export function ProjectCard({ project, featured = false }) {
+  const cover = covers[project.image];
+  const Heading = featured ? "h3" : "h2";
+  const [shortTitle] = project.title.split(/ [–—] /);
+  const destinations = [
+    project.demo && { href: project.demo, label: "Live site", Icon: Globe2 },
+    project.github && { href: project.github, label: "Source code", Icon: Github },
+  ].filter(Boolean);
+
+  return (
+    <article className={styles.card}>
+      <ProjectCover project={project} cover={cover} featured={featured} />
+      <div className={styles.cardBody}>
+        <p className={styles.category}>
+          {cover?.category || (project.demo ? "Client platform" : "Web application")}
+        </p>
+        <Heading className={styles.cardTitle}>{featured ? shortTitle : project.title}</Heading>
+        <p className={styles.description}>{featured && cover ? cover.summary : project.description}</p>
+        {!featured && project.technologies?.length > 0 && (
+          <ul className={styles.technologies} aria-label="Technologies">
+            {project.technologies.map((tech) => <li key={tech}>{tech}</li>)}
+          </ul>
+        )}
+        <div className={styles.destinations}>
+          {destinations.map(({ href, label, Icon }, index) => (
+            <a
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${shortTitle} — ${label} (opens in a new tab)`}
+              className={index === 0 ? styles.primaryDestination : undefined}
+            >
+              <Icon size={16} strokeWidth={1.65} aria-hidden="true" />
+              {label}
+            </a>
+          ))}
         </div>
-
-        <div className="sm:w-2/3 flex flex-col justify-between py-2">
-            <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-primary">
-                        {project.title}
-                    </h3>
-                    <span className="text-xs text-muted-foreground">
-                        #{String(index + 1).padStart(2, '0')}
-                    </span>
-                </div>
-
-                <p className="text-sm text-muted-foreground line-clamp-2">
-                    {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5">
-                    {project.technologies.map((tech, idx) => (
-                        <span
-                            key={idx}
-                            className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary"
-                        >
-                            {tech}
-                        </span>
-                    ))}
-                </div>
-            </div>
-
-            <div className="flex items-center gap-3 pt-4">
-                {project.demo && (
-                    <Button
-                        size="sm"
-                        className="rounded-full h-8 px-4 text-xs"
-                        asChild
-                    >
-                        <a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2"
-                        >
-                            Live Demo
-                            <FaExternalLinkAlt className="w-3 h-3" />
-                        </a>
-                    </Button>
-                )}
-                {project.github && (
-                    <Button
-                        size="sm"
-                        variant="outline"
-                        className="rounded-full h-8 px-4 text-xs"
-                        asChild
-                    >
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2"
-                        >
-                            Source Code
-                            <FaGithub className="w-3 h-3" />
-                        </a>
-                    </Button>
-                )}
-            </div>
-        </div>
-    </motion.div>
-);
+      </div>
+    </article>
+  );
+}

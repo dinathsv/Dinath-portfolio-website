@@ -1,27 +1,16 @@
-"use client";
-import React from 'react';
-import { motion } from 'framer-motion';
-import { config } from '@/config';
+import { config } from "@/config";
 
-const Footer = () => {
-    return (
-        <motion.footer
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="py-4 sm:py-6 border-t border-secondary/20 flex items-center justify-center"
-        >
-            <div className="text-center px-4 w-full max-w-4xl mx-auto">
-                <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 md:gap-2 leading-tight">
-                    <span className="whitespace-nowrap">© {new Date().getFullYear()} {config.developer.name}</span>
-                    <span className="hidden sm:inline">•</span>
-                    <span className="whitespace-nowrap">All rights reserved</span>
-                    <span className="hidden sm:inline">•</span>
-                    <span className="whitespace-nowrap">Made by {config.developer.name}</span>
-                </div>
-            </div>
-        </motion.footer>
-    );
-};
-
-export default Footer;
+export default function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="page-width footer-inner">
+        <small>© {new Date().getFullYear()} {config.developer.name}</small>
+        <nav aria-label="Social links">
+          <a href={`https://github.com/${config.social.github}`}>GitHub</a>
+          <a href={config.social.linkedin}>LinkedIn</a>
+          <a href={config.contactInfo.find(item => item.label === "Email").link}>Email</a>
+        </nav>
+      </div>
+    </footer>
+  );
+}

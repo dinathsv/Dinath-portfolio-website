@@ -1,0 +1,206 @@
+.hero {
+  min-height: clamp(36.5rem, calc(100svh - 9.4rem), 45rem);
+  padding-block: clamp(3.8rem, 5.8vw, 6.35rem);
+  display: grid;
+  grid-template-columns: 1.035fr 1fr;
+  gap: clamp(2.5rem, 5.4vw, 6.5rem);
+  align-items: center;
+}
+.intro { min-width: 0; }
+.availability, .caption, .stackTitle {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: .75rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: .095em;
+}
+.availability {
+  color: #385748;
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+}
+.availability > span {
+  display: block;
+  width: .53rem;
+  height: .53rem;
+  background: #44785c;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #dfe9dc;
+  margin-inline: 3px;
+}
+.name {
+  font: 400 clamp(5.4rem, 8.65vw, 8.6rem)/.88 var(--serif);
+  letter-spacing: -.071em;
+  margin: 1.6rem 0 1.65rem -.045em;
+}
+.name em { font-weight: 400; color: var(--orange); letter-spacing: -.071em; }
+.bio {
+  color: #49594e;
+  font-size: clamp(1rem, 1.4vw, 1.21rem);
+  line-height: 1.58;
+  max-width: 27em;
+  text-wrap: pretty;
+}
+.actions { display: flex; align-items: center; gap: clamp(1.2rem, 2vw, 2rem); flex-wrap: wrap; margin-top: 2rem; }
+.primary, .download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  font-size: .93rem;
+  font-weight: 550;
+}
+.primary {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 4px;
+  padding: .8rem 1.45rem;
+  transition: background .18s, transform .18s;
+}
+.primary:hover { background: #245747; transform: translateY(-2px); }
+.download { gap: .52rem; }
+.download span { border-bottom: 1px solid #9da79a; }
+.download:hover { color: var(--orange); }
+.portrait { position: relative; min-width: 0; margin: 0; }
+.print {
+  aspect-ratio: 1.26;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  background-color: #154e45;
+  background-image:
+    linear-gradient(90deg, #c5e5c215 1px, transparent 1px),
+    linear-gradient(#c5e5c215 1px, transparent 1px),
+    radial-gradient(ellipse at 15% 26%, #437560, transparent 78%);
+  background-size: 7.75% 100%, 100% 9.78%, 100% 100%;
+}
+.contours {
+  position: absolute;
+  inset: -52% -32% -26% 24%;
+  transform: rotate(-27deg);
+  background: repeating-radial-gradient(ellipse 54% 43% at 65% 44%, transparent 0px 11px, #bad9bd49 11.4px 12.15px, transparent 12.5px 16.5px);
+  clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 100%);
+}
+.disc {
+  position: absolute;
+  width: 69%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  left: 12%;
+  top: 11%;
+  background-color: #bcd1a6;
+  background-image: repeating-linear-gradient(-45deg, transparent 0 3px, #50735430 3px 4px, transparent 4px 5px);
+  box-shadow: 0 0 0 1px #e1e4ba33;
+}
+.portraitImage {
+  width: 86%;
+  max-width: none;
+  height: auto;
+  position: absolute;
+  left: 7%;
+  top: 8.5%;
+  filter: grayscale(1) sepia(.21) contrast(1.16) brightness(1.08);
+}
+.screen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(#132f25 22%, transparent 39%) 0 0 / 2.65px 2.65px;
+  mix-blend-mode: multiply;
+  opacity: .31;
+}
+.trim { position: absolute; inset: 16px; pointer-events: none; }
+.trim i {
+  position: absolute;
+  height: 15px; width: 15px;
+  background: linear-gradient(#e9ecd1, #e9ecd1) center / 1px 100% no-repeat,
+    linear-gradient(#e9ecd1, #e9ecd1) center / 100% 1px no-repeat;
+  opacity: .8;
+}
+.trim i:nth-child(1) { top: 0; left: 0; }
+.trim i:nth-child(2) { top: 0; right: 0; }
+.trim i:nth-child(3) { bottom: 0; left: 0; }
+.trim i:nth-child(4) { bottom: 0; right: 0; }
+.asterisk {
+  position: absolute;
+  top: -4.6%;
+  right: -3%;
+  width: clamp(3.6rem, 6.6vw, 6.2rem);
+  aspect-ratio: 1;
+  pointer-events: none;
+  transform: rotate(12deg);
+}
+.asterisk i {
+  position: absolute;
+  top: 43.75%;
+  left: 0;
+  width: 100%;
+  height: 12.5%;
+  background: #ec764a;
+}
+.caption {
+  padding: .88rem 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  align-items: center;
+  font-size: .74rem;
+  letter-spacing: .054em;
+  color: #536456;
+}
+.caption > span { display: inline-flex; gap: .4rem; align-items: center; }
+.stackBand { background: #183d33; color: #e5ebdc; }
+.stackInner {
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.3rem, 3.1vw, 3.35rem);
+}
+.stackTitle {
+  white-space: nowrap;
+  color: #c0ceb9;
+  padding: .4rem clamp(1.25rem, 2.7vw, 3rem) .4rem 0;
+  border-right: 1px solid #82968390;
+}
+.stackList {
+  list-style: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.stackList li { display: inline-flex; align-items: center; gap: .6rem; font-weight: 480; letter-spacing: -.025em; font-size: clamp(.95rem, 1.24vw, 1.15rem); }
+.stackList svg { width: 1.28em; height: 1.28em; flex: none; }
+@media (min-width: 741px) and (max-width: 965px) {
+  .hero { gap: 2.2rem; min-height: 33rem; }
+  .name { font-size: 8.4vw; }
+  .bio { font-size: 1rem; }
+  .caption { font-size: .7rem; }
+  .stackInner { gap: 1rem; }
+  .stackTitle { padding-right: 1rem; }
+  .stackList { gap: .65rem; }
+  .stackList li { gap: .35rem; font-size: .86rem; }
+}
+@media (max-width: 740px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-block: 2.85rem 2.15rem; gap: 2.8rem; }
+  .name { font-size: clamp(3.6rem, 19.5vw, 6.25rem); margin-block: 1.45rem 1.2rem; }
+  .bio { font-size: 1rem; }
+  .actions { margin-top: 1.4rem; }
+  .portrait { width: 100%; max-width: 35rem; }
+  .print { aspect-ratio: 1.35; }
+  .asterisk { width: clamp(3rem, 10.3vw, 4.25rem); }
+  .stackInner { display: block; padding-block: 1.15rem 1.35rem; }
+  .stackTitle { padding: 0; margin-bottom: .95rem; border: 0; font-size: .75rem; }
+  .stackList { display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 1rem; }
+  .stackList li { font-size: .93rem; }
+}
+@media (max-width: 360px) {
+  .actions { gap: 1rem; }
+  .primary { padding-inline: 1rem; }
+  .stackList { column-gap: .45rem; }
+  .stackList li { gap: .3rem; font-size: .85rem; }
+}
