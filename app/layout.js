@@ -14,7 +14,7 @@ export const metadata = {
     default: "Sivaranjan Dinath — Software Engineering Portfolio",
     template: "%s — Sivaranjan Dinath",
   },
-  description: "Sivaranjan Dinath is a software engineering undergraduate in Sri Lanka building backend systems, AI services, and web platforms.",
+  description: "Sivaranjan Dinath builds Java and Python APIs in Colombo, Sri Lanka. Explore his work on flood prediction, supply chain microservices, and three live client platforms.",
   authors: [{ name: "Sivaranjan Dinath" }],
 };
 

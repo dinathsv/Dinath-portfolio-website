@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { HiCode, HiCube, HiDatabase, HiMail, HiBriefcase, HiServer, HiLightningBolt, HiPhone } from "react-icons/hi";
+import { HiCode, HiCube, HiDatabase, HiDeviceMobile, HiMail, HiServer, HiLightningBolt, HiPhone } from "react-icons/hi";
 import { SiOpenai } from "react-icons/si";
 
 export const config = {
@@ -18,35 +18,35 @@ export const config = {
     projects: [
         {
             title: "ResQAI — AI-Powered Disaster & Emergency Relief Platform",
-            description: "Built the Python FastAPI AI microservice powering LLM-driven situational summaries, multilingual report translation, and a trilingual first-aid chatbot. Designed the PostGIS geospatial database schema and implemented the resource-locator service.",
+            description: "Trained random forest models on 30 years of data from 25 Sri Lankan districts to predict flood risk. Built FastAPI and PostGIS services that find the nearest hospital in under a second, and a Vertex AI service that extracts crisis reports in Sinhala, Tamil and English for ambulance dispatch.",
             image: "/projects/resqai_logo.jpeg",
-            technologies: ["Python", "FastAPI", "Node.js", "Express", "React Native", "PostgreSQL/PostGIS", "Redis", "Docker", "LLM Integration"],
+            technologies: ["Python", "FastAPI", "scikit-learn", "SQLAlchemy", "PostgreSQL/PostGIS", "Redis", "Google Vertex AI", "Docker", "React Native"],
             github: "https://github.com/dinathsv/resqai-platform"
         },
         {
             title: "CORE — Centralized Operations & Routing Engine",
-            description: "AI-augmented supply chain platform embedding a conversational AI agent into the operational layer of a microservices system. Features API gateway, Kafka event-driven messaging, demand-forecasting, and LangChain-based RAG.",
+            description: "Building a supply chain platform that connects inventory, order and supplier services through Kafka. Designed the Spring Cloud Gateway for authentication, rate limiting and routing. Operators can ask Assist, a LangChain agent, to investigate gateway logs, check stock and look up demand forecasts.",
             image: "/projects/CORE_logo.png",
             technologies: ["Java", "Spring Boot", "Spring Cloud Gateway", "Apache Kafka", "Python", "FastAPI", "LangChain", "RAG"],
-            github: "https://github.com/dinathsv/CORE---Centralized-Operations-Routing-Engine-AI-Augmented-Supply-Chain-Platform-"
+            github: "https://github.com/dinathsv/CORE"
         },
         {
             title: "ivy.lk — E-Commerce Order Management System",
-            description: "Independently designed, built, and deployed a production Laravel e-commerce platform for a client. Features role-based access control, dynamic pricing, SMS notifications, and automated PDF invoicing (DomPDF).",
+            description: "Built and deployed a Laravel order management platform for a retail client. Staff manage orders and pricing, send SMS updates and generate PDF invoices. I handled hosting and production support through handover.",
             image: "/projects/IVY_logo.jpeg",
             technologies: ["Laravel 12", "PHP 8.2", "MySQL", "Blade", "Alpine.js", "Tailwind CSS", "Vite", "PHPUnit"],
             demo: "https://ivy.lk"
         },
         {
             title: "vfix.lk — Service Booking & Workforce Management",
-            description: "Production-ready service booking and worker management platform. Implemented role-based architecture, state-driven booking lifecycle, admin dashboards, and automated PDF invoicing.",
+            description: "Moved a service business’s booking and workforce records off paper. Built a Laravel dashboard to manage workers, track bookings through each stage and generate PDF invoices, then deployed and supported the live system.",
             image: "/projects/VFIX_logo.jpeg",
             technologies: ["Laravel 12", "PHP 8.2", "MariaDB", "Blade", "Alpine.js", "Tailwind CSS", "Vite", "PHPUnit"],
             demo: "https://vfix.lk/"
         },
         {
             title: "mamcargo.com — Dual-Brand Logistics & Export Platform",
-            description: "Developed a high-performance dual-brand logistics and export platform. Features dual-frontend architecture, state-driven business logic, admin dashboards, and managed full deployment lifecycle.",
+            description: "Built a logistics and export platform with separate frontends for two brands. Client administrators manage workflows from a shared backend. I configured the domain and hosting, diagnosed production issues and documented the handover.",
             image: "/projects/MAMcrago_logo.jpeg",
             technologies: ["Laravel 12", "PHP 8.2", "MySQL", "Blade", "Alpine.js", "Tailwind CSS", "Vite", "PHPUnit"],
             demo: "https://mamcargo.com/"
@@ -101,6 +101,7 @@ export const config = {
                 { name: "Spring Cloud Gateway", level: "Advanced", hot: true },
                 { name: "FastAPI", level: "Advanced", hot: true },
                 { name: "SQLAlchemy", level: "Advanced" },
+                { name: "Django" },
                 { name: "Node.js/Express", level: "Advanced" },
                 { name: "Laravel", level: "Expert" }
             ]
@@ -130,6 +131,7 @@ export const config = {
             iconClass: "text-pink-500",
             skills: [
                 { name: "Scikit-Learn", level: "Advanced", hot: true },
+                { name: "Random Forest" },
                 { name: "Google Vertex AI / Gemini", level: "Advanced", hot: true },
                 { name: "LLM Integration", level: "Advanced" },
                 { name: "RAG", level: "Advanced" },
@@ -148,13 +150,15 @@ export const config = {
                 { name: "MySQL", level: "Expert" },
                 { name: "Redis", level: "Advanced", hot: true },
                 { name: "MariaDB", level: "Advanced" },
+                { name: "ChromaDB (vector database)" },
+                { name: "DBeaver" },
                 { name: "SQLite", level: "Advanced" },
                 { name: "Firebase", level: "Intermediate" },
                 { name: "Supabase", level: "Intermediate" }
             ]
         },
         {
-            title: "DevOps & Tools",
+            title: "DevOps & Operations",
             icon: <HiServer />,
             description: "DevOps & Infrastructure",
             bgClass: "bg-orange-500/10",
@@ -165,9 +169,26 @@ export const config = {
                 { name: "Docker Compose", level: "Advanced", hot: true },
                 { name: "Git & GitHub", level: "Expert" },
                 { name: "Linux", level: "Advanced" },
+                { name: "Bash" },
+                { name: "Production Support" },
+                { name: "Troubleshooting" },
+                { name: "Log Analysis" },
                 { name: "Pytest", level: "Advanced" },
                 { name: "PHPUnit", level: "Advanced" },
                 { name: "cPanel & DNS", level: "Advanced" }
+            ]
+        },
+        {
+            title: "Frontend & Mobile",
+            icon: <HiDeviceMobile />,
+            description: "Web & Mobile Development",
+            bgClass: "bg-teal-500/10",
+            iconClass: "text-teal-500",
+            skills: [
+                { name: "React" },
+                { name: "Next.js" },
+                { name: "React Native" },
+                { name: "Tailwind CSS" }
             ]
         }
     ],
@@ -177,11 +198,11 @@ export const config = {
             company: "Freelance / Self-Employed",
             period: "Oct 2025 - Oct 2026",
             location: "Sri Lanka",
-            description: "Delivered 3 production-grade platforms for independent clients, managing the full development lifecycle from scoping to deployment.",
+            description: "Built and supported three live platforms for retail, service booking and logistics clients. Traced production issues through logs and database records, and wrote handover guides for each client’s administrators.",
             responsibilities: [
-                "Delivered 3 production-grade platforms for independent clients (ivy.lk, vfix.lk, mamcargo.com), managing the full development lifecycle from scoping to deployment.",
-                "Architected backend systems and role-based access control; handled domain purchase, DNS configuration, and secure deployment across 3 live production systems.",
-                "Replaced manual, paper-based business workflows with automated booking, order, and logistics platforms for real clients."
+                "Deployed and supported ivy.lk, vfix.lk and mamcargo.com, diagnosed issues using application logs and database behavior, and documented procedures for client administrators.",
+                "Designed backend systems and role-based access controls, registered domains, configured DNS and managed secure deployments.",
+                "Automated paper-based booking, order and logistics workflows for three client businesses."
             ],
             technologies: ["Laravel 12", "PHP 8.2", "MySQL", "MariaDB", "Blade", "Alpine.js", "Tailwind CSS", "Vite", "PHPUnit"]
         },
@@ -190,7 +211,7 @@ export const config = {
             company: "People's Bank",
             period: "Feb 2024 - Jun 2024",
             location: "Chenkalady",
-            description: "Assisted 80+ customers daily, maintained financial records with 100% accuracy, and enforced KYC/AML compliance while mentoring 5 new trainees.",
+            description: "Resolved more than 80 customer queries a day, maintained accurate financial records and mentored five trainees in banking procedures and KYC/AML compliance.",
             responsibilities: [
                 "Assisted 80+ customers daily with banking operations and financial services.",
                 "Maintained financial records with 100% accuracy across all transactions.",
@@ -228,10 +249,18 @@ export const config = {
         }
     ],
     certifications: [
+        "Agent Control and Management: Foundations (WSO2)",
         "AI/ML Engineer Certification (Stages 1–3) - SLIIT",
         "Fundamentals of Java Programming (Coursera)",
         "Java Intermediate Course (Sololearn)",
         "Prompt Design in Vertex AI Skill Badge (Google Cloud)"
+    ],
+    awards: [
+        {
+            title: "First place, Best Poster Award in Information Technology",
+            event: "5th International Research Conference of ITUM (ITUMIRC 2026)",
+            date: "Nov 2026"
+        }
     ],
     contactInfo: [
         {

@@ -55,19 +55,11 @@ main:focus:not(:focus-visible) { outline: 0; }
 .header-inner { height: 4.75rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1.5rem; }
 .wordmark { justify-self: start; display: inline-flex; align-items: center; gap: .7rem; font-size: 1.02rem; font-weight: 650; letter-spacing: -.045em; white-space: nowrap; }
 .brand-icon {
-  display: grid;
-  place-content: center;
-  position: relative;
+  display: block;
+  flex: none;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 50%;
-  background: var(--ink);
-  color: var(--paper);
-  font: italic bold 1.42rem/.95 var(--serif);
-  letter-spacing: -.09em;
-  padding-right: .21rem;
 }
-.brand-icon span { font-size: .95em; color: #f39264; position: absolute; right: .44rem; bottom: .47rem; }
 .top-nav { display: flex; align-items: center; gap: clamp(1.4rem, 2.9vw, 3rem); }
 .top-nav a { position: relative; padding-block: .65rem; font-size: .93rem; color: #526154; }
 .top-nav a::after { content: ""; position: absolute; height: 2px; inset: auto 0 .28rem; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform .18s ease; }
@@ -98,8 +90,7 @@ main:focus:not(:focus-visible) { outline: 0; }
   html { scroll-padding-top: 4.75rem; }
   .header-inner { height: 4.15rem; grid-template-columns: 1fr auto; gap: .5rem; }
   .wordmark { gap: .5rem; font-size: .94rem; }
-  .brand-icon { width: 2.2rem; height: 2.2rem; font-size: 1.26rem; }
-  .brand-icon span { right: .35rem; bottom: .41rem; }
+  .brand-icon { width: 2.2rem; height: 2.2rem; }
   .contact-link { font-size: .81rem; min-height: 2.25rem; padding: .42rem .78rem; }
   .menu-trigger { display: grid; place-items: center; height: 2.75rem; width: 2.35rem; }
   .menu-trigger svg { width: 1.45rem; height: 1.45rem; stroke-width: 1.6; }

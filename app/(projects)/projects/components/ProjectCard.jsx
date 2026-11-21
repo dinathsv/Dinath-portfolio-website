@@ -2,22 +2,23 @@ import Image from "next/image";
 import { CalendarDays, Code2, Gavel, Github, Globe2, Inbox } from "lucide-react";
 import styles from "./projects.module.css";
 
-const covers = {
+const presentation = {
   "/projects/resqai_logo.jpeg": {
-    image: "/projects/resqai-relief-map.webp",
     category: "Geospatial AI",
-    summary: "Multilingual emergency reporting, first-aid guidance and a map of nearby relief resources.",
+    summary: "Flood forecasts for 25 Sri Lankan districts, with hospital routing and crisis reports in Sinhala, Tamil and English.",
   },
   "/projects/CORE_logo.png": {
-    image: "/projects/core-routing-engine.webp",
+    tone: "forest",
     category: "Distributed systems",
-    summary: "An event-driven supply chain platform with demand forecasting and a conversational AI agent.",
+    summary: "Kafka connects inventory, orders and suppliers. Operators ask Assist to check stock, investigate logs and look up demand forecasts.",
   },
   "/projects/IVY_logo.jpeg": {
-    image: "/projects/ivy-order-receipt.webp",
+    tone: "clay",
     category: "E-commerce",
     summary: "A live order management platform with dynamic pricing, SMS updates and automated invoices.",
   },
+  "/projects/VFIX_logo.jpeg": { tone: "clay" },
+  "/projects/MAMcrago_logo.jpeg": { tone: "forest" },
 };
 
 const appIcons = {
@@ -26,7 +27,7 @@ const appIcons = {
   "Online Auction & E-Commerce Shopping System": Gavel,
 };
 
-function ProjectCover({ project, cover, featured }) {
+function ProjectCover({ project, tone, featured }) {
   if (project.image === "/logo.jpg" || !project.image) {
     const Icon = appIcons[project.title] || Code2;
     return (
@@ -37,9 +38,9 @@ function ProjectCover({ project, cover, featured }) {
   }
 
   return (
-    <div className={`${styles.cover} ${cover ? "" : styles.logoCover}`}>
+    <div className={`${styles.cover} ${styles.logoCover}`} data-tone={tone}>
       <Image
-        src={cover?.image || project.image}
+        src={project.image}
         alt=""
         fill
         sizes={featured ? "(min-width: 920px) 31vw, (min-width: 660px) 45vw, 92vw" : "(min-width: 760px) 44vw, 92vw"}
@@ -49,7 +50,7 @@ function ProjectCover({ project, cover, featured }) {
 }
 
 export function ProjectCard({ project, featured = false }) {
-  const cover = covers[project.image];
+  const details = presentation[project.image];
   const Heading = featured ? "h3" : "h2";
   const [shortTitle] = project.title.split(/ [–—] /);
   const destinations = [
@@ -59,13 +60,13 @@ export function ProjectCard({ project, featured = false }) {
 
   return (
     <article className={styles.card}>
-      <ProjectCover project={project} cover={cover} featured={featured} />
+      <ProjectCover project={project} tone={details?.tone} featured={featured} />
       <div className={styles.cardBody}>
         <p className={styles.category}>
-          {cover?.category || (project.demo ? "Client platform" : "Web application")}
+          {details?.category || (project.demo ? "Client platform" : "Web application")}
         </p>
         <Heading className={styles.cardTitle}>{featured ? shortTitle : project.title}</Heading>
-        <p className={styles.description}>{featured && cover ? cover.summary : project.description}</p>
+        <p className={styles.description}>{(featured && details?.summary) || project.description}</p>
         {!featured && project.technologies?.length > 0 && (
           <ul className={styles.technologies} aria-label="Technologies">
             {project.technologies.map((tech) => <li key={tech}>{tech}</li>)}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -66,7 +67,7 @@ export default function Header() {
     <header className="site-header" ref={header}>
       <div className="page-width header-inner">
         <Link href="/" className="wordmark" aria-label="Sivaranjan Dinath, home" onClick={() => setMenuOpen(false)}>
-          <span className="brand-icon" aria-hidden="true">sd<span>.</span></span>
+          <Image src="/icon.png" className="brand-icon" width={40} height={40} alt="" unoptimized />
           <span>Sivaranjan Dinath</span>
         </Link>
         <nav ref={nav} className={`top-nav${menuOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="Primary">

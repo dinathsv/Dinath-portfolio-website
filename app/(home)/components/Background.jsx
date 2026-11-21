@@ -23,9 +23,10 @@ export default function Background() {
         <div className={styles.intro}>
           <h2 id="about-title">About <em>me.</em></h2>
           <p>
-            I study IT at the University of Moratuwa in Sri Lanka. Alongside my
-            studies, I’ve helped businesses move their orders, bookings and
-            invoices off paper.
+            I study IT at the University of Moratuwa. For my freelance clients,
+            I’ve handled everything from setting up domains to tracking down
+            errors in production. I’m especially interested in API gateways and
+            how services authenticate and talk to each other.
           </p>
           <a className={styles.cvLink} href="/Dinath_Sivaranjan_CV.pdf" download>
             <Download size={17} strokeWidth={1.7} aria-hidden="true" />
@@ -70,8 +71,11 @@ export default function Background() {
             </dl>
           </ResumeSection>
 
-          <ResumeSection id="certifications" title="Certifications">
+          <ResumeSection id="certifications" title="Certifications & awards">
             <ul className={styles.certificates}>
+              {config.awards.map((award) => (
+                <li key={award.title}>{award.title} · {award.event}, {award.date}</li>
+              ))}
               {config.certifications.map((certificate) => (
                 <li key={certificate}>{certificate}</li>
               ))}

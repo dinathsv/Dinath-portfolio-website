@@ -16,7 +16,7 @@ export default function ContactPage() {
         <p className={styles.kicker}>Contact</p>
         <h1 id="contact-title">Drop me<br /><em>a line.</em></h1>
         <p className={styles.lead}>
-          I’m based in Sri Lanka and open to software engineering internships. Have a role in mind or a project you’d like to talk through?
+          I’m based in Colombo, Sri Lanka, and available for a one-year software engineering internship from January 2027. Have a role or project in mind?
         </p>
       </div>
 

@@ -82,13 +82,44 @@
 }
 
 .logoCover {
-  background: #eeede5;
+  --logo-ink: #214f44;
+  isolation: isolate;
+  background: #d7e1cf;
 }
 
 .logoCover img {
   object-fit: contain;
-  padding: 8%;
+  padding-block: 6%;
+  filter: grayscale(1) contrast(1.35);
   mix-blend-mode: multiply;
+}
+
+.logoCover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--logo-ink);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+.logoCover[data-tone="clay"] {
+  --logo-ink: #813925;
+  background: #efd3b7;
+}
+
+.logoCover[data-tone="forest"] {
+  --logo-ink: #e3ead7;
+  background: #224e43;
+}
+
+.logoCover[data-tone="forest"] img {
+  filter: grayscale(1) contrast(1.4) invert(1);
+  mix-blend-mode: screen;
+}
+
+.logoCover[data-tone="forest"]::after {
+  mix-blend-mode: darken;
 }
 
 .symbolCover {
