@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/Providers/Theme";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -20,12 +21,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={geistSans.className} id="top">
-        <a className="skip-link" href="#main-content">Skip to content</a>
-        <Header />
-        <main id="main-content" tabIndex={-1}>{children}</main>
-        <Footer />
+        <ThemeProvider attribute="data-theme" storageKey="portfolio-theme" defaultTheme="system" enableSystem>
+          <a className="skip-link" href="#main-content">Skip to content</a>
+          <Header />
+          <main id="main-content" tabIndex={-1}>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

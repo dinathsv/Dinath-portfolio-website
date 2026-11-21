@@ -1,0 +1,44 @@
+.toggle {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--surface);
+  cursor: pointer;
+  transition: color 180ms, border-color 180ms;
+}
+
+.toggle:hover { color: var(--orange); border-color: currentColor; }
+.toggle svg {
+  grid-area: 1 / 1;
+  width: 1.15rem;
+  height: 1.15rem;
+  stroke-width: 1.7;
+  transition: transform 350ms ease, opacity 220ms ease;
+}
+.sun { opacity: 0; transform: rotate(-70deg) scale(.6); }
+.moon { opacity: 1; transform: rotate(0) scale(1); }
+:global(html[data-theme="dark"]) .moon { opacity: 0; transform: rotate(65deg) scale(.6); }
+:global(html[data-theme="dark"]) .sun { opacity: 1; transform: rotate(0) scale(1); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal::view-transition-old(root),
+  .reveal::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+  .reveal::view-transition-new(root) {
+    animation: spread 520ms cubic-bezier(.22,.65,.34,1) both;
+  }
+  @keyframes spread {
+    from { clip-path: circle(0px at var(--theme-circle-at)); }
+    to { clip-path: circle(var(--theme-circle-radius) at var(--theme-circle-at)); }
+  }
+  .fade :where(body, header, main, footer, section, nav, article, p, a, button) {
+    transition: color 300ms ease, border-color 300ms ease, background-color 300ms ease;
+  }
+}

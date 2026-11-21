@@ -1,6 +1,6 @@
 .featured,
 .archive {
-  color: #152e2a;
+  color: var(--ink);
 }
 
 .featured {
@@ -45,12 +45,12 @@
 .archiveLink span {
   font-family: ui-monospace, Consolas, monospace;
   font-size: .8rem;
-  color: #54645b;
+  color: var(--muted);
 }
 
 .archiveLink:hover,
 .destinations a:hover {
-  color: #a53c22;
+  color: var(--orange);
 }
 
 .featuredGrid,
@@ -73,7 +73,10 @@
   flex: none;
   overflow: hidden;
   aspect-ratio: 108 / 65;
-  background: #dae0d2;
+  background: var(--surface);
+  transform-origin: 50% 80%;
+  box-shadow: 0 2px 0 var(--line);
+  transition: transform .32s ease-out, box-shadow .32s ease-out;
 }
 
 .cover img {
@@ -122,6 +125,21 @@
   mix-blend-mode: darken;
 }
 
+:global(html[data-theme="dark"]) .logoCover {
+  --logo-ink: #213e33;
+  background: #adbeaa;
+}
+
+:global(html[data-theme="dark"]) .logoCover[data-tone="clay"] {
+  --logo-ink: #602e21;
+  background: #d2af93;
+}
+
+:global(html[data-theme="dark"]) .logoCover[data-tone="forest"] {
+  --logo-ink: #d2dfc8;
+  background: #254f43;
+}
+
 .symbolCover {
   display: grid;
   place-items: center;
@@ -130,6 +148,7 @@
 }
 
 .symbolCover span {
+  color: #214f44;
   display: grid;
   place-items: center;
   width: 27%;
@@ -150,7 +169,7 @@
 .category {
   margin: 0 0 .55rem;
   font: 550 .75rem/1.4 ui-monospace, "Courier New", monospace;
-  color: #52665b;
+  color: var(--muted);
   letter-spacing: .085em;
   text-transform: uppercase;
 }
@@ -165,7 +184,7 @@
 }
 
 .description {
-  color: #46564c;
+  color: var(--muted);
   font-size: 1rem;
   line-height: 1.6;
   margin: .65rem 0 0;
@@ -187,7 +206,7 @@
   font-size: .9rem;
   font-weight: 550;
   padding: .4rem 0;
-  color: #243f35;
+  color: var(--ink);
   text-decoration: none;
 }
 
@@ -195,19 +214,32 @@
 .primaryDestination::after {
   content: "";
   position: absolute;
+  z-index: 1;
   top: 0;
   inset-inline: 0;
   aspect-ratio: 108 / 65;
 }
 
 .card:has(.primaryDestination:focus-visible) .cover {
-  outline: 2px solid #ad4025;
+  outline: 2px solid var(--orange);
   outline-offset: 3px;
 }
 
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .card:has(.primaryDestination:hover) .cover img {
-    transform: scale(1.025);
+@media (prefers-reduced-motion: no-preference) {
+  .card:has(.primaryDestination:focus-visible) .cover {
+    transform: perspective(900px) translateY(-4px) rotateX(2deg) rotateY(-2deg);
+    box-shadow: 2px 4px 0 var(--line), 0 12px 20px -12px rgb(0 20 15 / 38%);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .card:has(.primaryDestination:hover) .cover {
+      transform: perspective(900px) translateY(-4px) rotateX(2deg) rotateY(-2deg);
+      box-shadow: 2px 4px 0 var(--line), 0 12px 20px -12px rgb(0 20 15 / 38%);
+    }
+
+    .card:has(.primaryDestination:hover) .cover img {
+      transform: scale(1.035);
+    }
   }
 }
 
@@ -223,13 +255,13 @@
 .technologies li {
   font-size: .82rem;
   line-height: 1.65;
-  color: #506258;
+  color: var(--muted);
 }
 
 .technologies li:not(:last-child)::after {
   content: "·";
   margin-left: .65rem;
-  color: #728075;
+  color: var(--muted);
 }
 
 .archive {
@@ -239,7 +271,7 @@
 
 .archiveHeading {
   align-items: end;
-  border-bottom: 1px solid #b7c2b8;
+  border-bottom: 1px solid var(--line);
   padding-bottom: clamp(1.8rem, 3vw, 3.25rem);
 }
 
@@ -251,7 +283,7 @@
   margin: 1rem 0 0;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.55;
-  color: #495b51;
+  color: var(--muted);
   max-width: 44ch;
 }
 
@@ -265,19 +297,19 @@
 .filters button {
   border: 1px solid transparent;
   border-radius: 2px;
-  color: #3b5044;
+  color: var(--muted);
   font-size: .9rem;
   padding: .7rem .95rem;
   cursor: pointer;
 }
 
 .filters button:hover {
-  border-color: #aab8a9;
+  border-color: var(--line);
 }
 
 .filters button[aria-pressed="true"] {
-  background: #18392e;
-  color: #fffdf3;
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .archiveGrid {
@@ -290,7 +322,7 @@
 }
 
 .archiveGrid .card {
-  border-bottom: 1px solid #bdc9bd;
+  border-bottom: 1px solid var(--line);
   padding-bottom: 1rem;
 }
 

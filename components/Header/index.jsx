@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navigation = [
   { label: "Overview", href: "/" },
@@ -68,7 +69,7 @@ export default function Header() {
       <div className="page-width header-inner">
         <Link href="/" className="wordmark" aria-label="Sivaranjan Dinath, home" onClick={() => setMenuOpen(false)}>
           <Image src="/icon.png" className="brand-icon" width={40} height={40} alt="" unoptimized />
-          <span>Sivaranjan Dinath</span>
+          <span><span className="wordmark-first">Sivaranjan </span>Dinath</span>
         </Link>
         <nav ref={nav} className={`top-nav${menuOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="Primary">
           {navigation.map(({ href, label }) => (
@@ -78,6 +79,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="header-actions">
+          <ThemeToggle />
           <Link href="/contact" className="contact-link" aria-current={active === "Contact" ? "page" : undefined} onClick={() => setMenuOpen(false)}>
             Get in touch
           </Link>
