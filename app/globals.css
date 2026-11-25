@@ -106,7 +106,7 @@ main:focus:not(:focus-visible) { outline: 0; }
 .footer-inner small { font-size: .86rem; color: var(--muted); }
 .footer-inner nav { display: flex; flex-wrap: wrap; gap: 1.6rem; font-size: .89rem; font-weight: 550; }
 .footer-inner a:hover { color: var(--orange); text-decoration: underline; text-underline-offset: .2em; }
-@media (max-width: 740px) {
+@media (max-width: 800px) {
   html { scroll-padding-top: 4.75rem; }
   .header-inner { height: 4.15rem; grid-template-columns: 1fr auto; gap: .5rem; }
   .wordmark { gap: .5rem; font-size: .94rem; }

@@ -10,6 +10,7 @@ import ThemeToggle from "./ThemeToggle";
 const navigation = [
   { label: "Overview", href: "/" },
   { label: "Projects", href: "/projects" },
+  { label: "Articles", href: "/#articles" },
   { label: "About", href: "/#about" },
 ];
 
@@ -26,8 +27,10 @@ export default function Header() {
     const updateSection = () => {
       const offset = header.current.offsetHeight + window.innerHeight * 0.25;
       const about = document.getElementById("about");
+      const articles = document.getElementById("articles");
       const work = document.getElementById("work");
       if (about && about.getBoundingClientRect().top <= offset) setSection("About");
+      else if (articles && articles.getBoundingClientRect().top <= offset) setSection("Articles");
       else if (work && work.getBoundingClientRect().top <= offset) setSection("Projects");
       else setSection("Overview");
     };

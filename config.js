@@ -73,6 +73,32 @@ export const config = {
             github: "https://github.com/Dinath2002/auction_shop"
         }
     ],
+    articles: [
+        {
+            slug: "agent-management",
+            title: "Beyond the Prototype: Managing AI Agents in Production with Choreo Agent Manager",
+            topic: "Agent operations",
+            description: "A look at how Choreo Agent Manager brings observability, evaluation, governance, and identity together for running agents in production.",
+            image: "/AI Agent Governance Network.png",
+            url: "https://www.linkedin.com/pulse/beyond-prototype-managing-ai-agents-production-choreo-sivaranjan-pgicc"
+        },
+        {
+            slug: "agent-identity",
+            title: "Your AI Agent Is Not the User: Giving Agents Their Own Identity with Choreo Labs",
+            topic: "Agent identity",
+            description: "Why agents need their own identities and how OAuth delegation lets them act on a user’s behalf.",
+            image: "/AI Agent Identity and Secure Delegation.png",
+            url: "https://www.linkedin.com/pulse/your-ai-agent-user-giving-agents-own-identity-choreo-labs-sivaranjan-w0kvc"
+        },
+        {
+            slug: "ai-gateways",
+            title: "Taming the LLM Wild West: Why Your AI Traffic Needs a Gateway",
+            topic: "AI gateways",
+            description: "How an AI gateway can protect sensitive data, control token costs, route across providers, and monitor LLM traffic.",
+            image: "/Taming the LLM Wild West.png",
+            url: "https://www.linkedin.com/pulse/taming-llm-wild-west-why-your-ai-traffic-needs-dinath-sivaranjan-caj8c"
+        }
+    ],
     skills: [
         {
             title: "Languages",
